@@ -144,6 +144,7 @@ def run_sku(
         else:
             img_stats = generate_all_images(
                 client, cfg, prompts, product_input.image, ws,
+                category=product_input.category,
             )
         _progress("images", status="done", **img_stats)
     else:

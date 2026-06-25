@@ -93,13 +93,16 @@ def generate_all_images(
     product_image: str,
     ws: Path,
     progress_callback: Any = None,
+    category: str = "",
 ) -> dict:
     """并发生成电商图; 已存在的图自动跳过 (断点续跑)。
 
-    生成前先产出「产品身份证」参考图 (正面/背面/侧面 + 3 细节),
+    生成前先产出「产品身份证」参考图 (根据品类自适应展示方式),
     后续所有 H/D 图以此参考图为底图, 确保产品一致性。
 
     Args:
+        category: 产品类目, 用于决定参考图展示方式
+                  (服装=人台, 配饰=手模/耳模, 其他=浮空)
         progress_callback: 可选, 每完成一张图时调用 callback(code, status, path)。
     """
     # ── Step 0: 产品身份证参考图 ──
@@ -108,7 +111,7 @@ def generate_all_images(
 
     if not ref_exists:
         LOG.info("生成产品身份证参考图 (正/背/侧 + 3 细节)...")
-        ref_prompt = _build_product_ref_prompt(prompts)
+        ref_prompt = _build_product_ref_prompt(prompts, category)
         try:
             generate_image(
                 client, cfg, ref_prompt, product_image, ref_path,
@@ -203,38 +206,93 @@ def generate_all_images(
     return results
 
 
-def _build_product_ref_prompt(prompts: dict) -> dict:
+def _build_product_ref_prompt(prompts: dict, category: str = "") -> dict:
     """构建产品身份证 6 面板参考图 prompt。
 
-    上方: 正面人台 | 背面 | 侧面
-    下方: 材质纹理特写 | 工艺/五金特写 | 独特设计特征特写
+    根据品类自适应展示方式:
+        - 服装/鞋: 隐形人台
+        - 配饰/首饰/手表: 仿真手模/耳模
+        - 其他: 浮空展示
     """
+    cat_lower = (category or "").lower()
+
+    # ── 判断展示方式 ──
+    is_fashion = any(kw in cat_lower for kw in (
+        "女装", "男装", "服装", "连衣裙", "衬衫", "外套", "针织", "t恤",
+        "运动服", "fashion", "shirt", "dress", "coat", "knit", "tshirt",
+    ))
+    is_shoes = any(kw in cat_lower for kw in ("鞋", "靴", "shoe"))
+    is_accessory = any(kw in cat_lower for kw in (
+        "配饰", "首饰", "珠宝", "手表", "耳环", "项链", "戒指", "手链",
+        "jewelry", "watch", "accessor",
+    ))
+    is_beauty = any(kw in cat_lower for kw in (
+        "美妆", "护肤", "彩妆", "香水", "beauty", "skincare", "makeup", "fragrance",
+    ))
+
+    if is_fashion or is_shoes:
+        display_method = (
+            "FASHION/SHOES: use invisible/ghost mannequin for front & back views, "
+            "showing natural 3D body/foot shape. "
+            "For shoes: invisible foot form showing toe, arch, heel shape."
+        )
+        top_labels = "front ghost mannequin | back ghost mannequin | side profile"
+    elif is_accessory:
+        display_method = (
+            "ACCESSORIES: use realistic hand model (rings/bracelets), "
+            "ear model (earrings), or neck/chest form (necklaces). "
+            "Skin texture should look natural — NOT plastic, NOT waxy, "
+            "visible pores, slight skin texture, natural warm skin tone. "
+            "For watches: wrist with natural hand pose."
+        )
+        top_labels = "on hand/ear model front | angled view | close-up wearing detail"
+    else:
+        display_method = (
+            "GENERAL PRODUCT: product floating slightly above white surface "
+            "with soft natural drop shadow. No mannequin, no model, no stand. "
+            "For beauty/skincare: show formula texture on skin or glass surface."
+        )
+        top_labels = "front floating view | 45° angled floating | side profile"
+
+    # ── 下排细节面板 ──
+    if is_fashion:
+        detail_labels = (
+            "fabric weave macro | stitching & hardware macro | label/tag detail"
+        )
+    elif is_accessory:
+        detail_labels = (
+            "material & gemstone macro | clasp/setting macro | hallmark/engraving"
+        )
+    elif is_beauty:
+        detail_labels = (
+            "formula texture macro | packaging quality | batch/label detail"
+        )
+    elif is_shoes:
+        detail_labels = (
+            "upper material macro | sole & tread macro | stitching & logo detail"
+        )
+    else:
+        detail_labels = (
+            "surface material macro | port/button/edge detail | brand label macro"
+        )
+
     ref_text = (
-        "Product identity reference sheet. Six panels in one image. "
-        "Size 2048x1536 or larger. Clean studio background #FFFFFF. "
-        "Professional ecommerce product photography lighting 5500K, even illumination. "
-        ""
-        "TOP ROW (3 panels, equal width): "
-        "Left: product front view on invisible mannequin/stand, "
-        "showing full silhouette and front details. "
-        "Center: product back view, showing back design and rear details. "
-        "Right: product side profile, showing depth and side structure. "
-        ""
-        "BOTTOM ROW (3 panels, equal width): "
-        "Left: extreme macro close-up of material texture "
-        "(fabric weave/leather grain/surface finish). "
-        "Center: macro close-up of craftsmanship detail "
-        "(stitching/buttons/zipper/hardware/closure). "
-        "Right: macro close-up of unique design feature "
-        "(label/logo/pattern/special element that differentiates this product). "
-        ""
-        "ALL SAME PRODUCT across all 6 panels. "
-        "SAME lighting, SAME white balance, SAME exposure. "
-        "This reference will be used as the base for all subsequent "
-        "hero and detail image generation — product MUST be identical "
-        "in every panel. DO NOT change product color, shape, or material. "
-        ""
-        "No text, no labels, no watermarks, no decorative elements."
+        f"Product identity reference sheet. Six panels in one image. "
+        f"Size 2048x1536 or larger. Clean studio background #FFFFFF. "
+        f"Professional ecommerce product photography lighting 5500K. "
+        f"{display_method} "
+        f""
+        f"TOP ROW (3 panels, equal width): {top_labels}. "
+        f""
+        f"BOTTOM ROW (3 panels, equal width): {detail_labels}. "
+        f""
+        f"ALL SAME PRODUCT across all 6 panels. "
+        f"SAME lighting, SAME white balance, SAME exposure. "
+        f"This reference will be used as the base for all subsequent "
+        f"hero and detail image generation — product MUST be identical "
+        f"in every panel. DO NOT change product color, shape, or material. "
+        f""
+        f"No text, no labels, no watermarks, no decorative elements."
     )
     return {
         "prompt": ref_text,
@@ -242,8 +300,8 @@ def _build_product_ref_prompt(prompts: dict) -> dict:
         "style_lock": prompts.get("H1", {}).get("style_lock", ""),
         "camera": "fixed studio camera, consistent framing across all 6 panels",
         "lighting": "even studio lighting 5500K, consistent across all panels",
-        "composition": "6-panel grid, 2 rows × 3 columns, equal panels, "
-                       "top=front|back|side, bottom=texture|craft|detail",
+        "composition": f"6-panel grid, 2 rows × 3 columns, equal panels, "
+                       f"top={top_labels}, bottom={detail_labels}",
         "background": "#FFFFFF clean seamless studio background",
         "color_control": ["#FFFFFF", "#2D2D2D"],
         "product_lock_rules": [

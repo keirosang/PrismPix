@@ -947,6 +947,7 @@ def run_web(cfg: Config, host: str = "127.0.0.1", port: int = 8000) -> None:
 
         # 在线程启动前提取所有 request 值 (Flask request context 在线程内不可用)
         sku = request.form.get("sku", "DEMO").strip() or "DEMO"
+        img_category = request.form.get("category", "").strip()
 
         run_cfg = dataclasses.replace(cfg)
         run_cfg.enable_generate_images = True
@@ -993,6 +994,7 @@ def run_web(cfg: Config, host: str = "127.0.0.1", port: int = 8000) -> None:
                     stats = generate_all_images(
                         client, run_cfg, prompts, str(img_path), ws,
                         progress_callback=_on_image,
+                        category=img_category,
                     )
 
                 _task_manager.add_progress(task_id, {"stage": "images", "status": "done", **stats})
