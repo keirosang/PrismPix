@@ -251,7 +251,7 @@ def _render_page() -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI 电商商品图生成</title>
+<title>PrismPix</title>
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#1A1A1A;background:#F0F0F0;overflow:hidden}
@@ -848,7 +848,7 @@ document.getElementById('imageFile').addEventListener('change', function() {
   state.productImage = this.files[0];
 });
 </script>
-<div class="footer">Ecom Vision Lab © 2026 · MIT License</div>
+<div class="footer">PrismPix © 2026 · GPL v3</div>
 </body>
 </html>"""
 

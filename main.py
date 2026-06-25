@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Copyright (c) 2026 Ecom Vision Lab. Licensed under MIT.
+# Copyright (c) 2026 PrismPix. Licensed under GPL v3.
 # See LICENSE file in the project root for full license text.
 """
-AI 电商商品图自动生成系统 (Web 服务)
+PrismPix — AI 电商视觉生成引擎
 
 启动: python main.py
 浏览器打开 http://127.0.0.1:8000

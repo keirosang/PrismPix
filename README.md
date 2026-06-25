@@ -1,4 +1,4 @@
-# AI 电商商品图自动生成系统
+# PrismPix — AI 电商视觉生成引擎
 
 输入一张产品图 + 基础信息，自动产出全套电商素材：**产品视觉分析 → 营销策略 → 14 条 GPT-Image-2 Prompt → 14 张电商图**。
 
@@ -190,7 +190,7 @@ prompt_templates/           # 25 个场景模板 JSON
 
 ## 许可
 
-MIT License © 2026 Ecom Vision Lab — 详见 [LICENSE](LICENSE) 文件。
+GPL v3 License © 2026 PrismPix — 详见 [LICENSE](LICENSE) 文件。
 
 ## 安全提示
 
