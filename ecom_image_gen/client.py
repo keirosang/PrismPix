@@ -35,7 +35,7 @@ def build_client(cfg: Config):
         ) from None
 
     if not cfg.api_key:
-        raise RuntimeError("缺少 API Key (--api-key / OPENAI_API_KEY / .env)")
+        raise RuntimeError("缺少 API Key (请在 .env 中设置 OPENAI_API_KEY)")
 
     return OpenAI(
         api_key=cfg.api_key,
