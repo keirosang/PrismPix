@@ -211,6 +211,13 @@ function pollGenerate() {
 
 function stopPoll() {
   state.generateTaskId = null;
+  // 确保按钮一定还原
+  const btn = document.getElementById('btnGenerate');
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = '🖼️ 重新生成';
+  }
+}
   state.analyzeTaskId = null;
 }
 
