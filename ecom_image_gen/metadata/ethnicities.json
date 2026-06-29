@@ -1,0 +1,217 @@
+{
+  "north china": {
+    "option_val": "中国华北 North China",
+    "display": "中国（华北）— 北方汉族，五官大气端庄，骨相硬朗立体",
+    "prompt": "Northern Chinese Han: dignified and poised features, strong angular bone structure, mature and composed temperament, fair warm skin, almond dark brown eyes. DO NOT substitute."
+  },
+  "northwest china": {
+    "option_val": "中国西北 Northwest China",
+    "display": "中国（西北）— 轮廓分明，粗犷原生力量感，肤色健康",
+    "prompt": "Northwestern Chinese: rugged and primal strength, sharply defined facial contours, healthy sun-toned complexion, strong brow, deep-set eyes. DO NOT substitute."
+  },
+  "tibetan": {
+    "option_val": "中国西藏 Tibetan",
+    "display": "中国（西藏）— 高原红/小麦肌，眼神纯粹，原生态美感",
+    "prompt": "Tibetan: high-altitude rosy cheeks or healthy wheat-toned skin, pure sincere eyes, raw natural untamed beauty, defined cheekbones. DO NOT substitute."
+  },
+  "uyghur": {
+    "option_val": "中国新疆 Uyghur",
+    "display": "中国（新疆）— 异域浓颜，高鼻深目，立体感极强",
+    "prompt": "Uyghur / Xinjiang minority: exotic intense features, high nose bridge and deep-set eyes, extremely strong three-dimensional facial structure, Central Asian mixed heritage. DO NOT substitute."
+  },
+  "cantonese": {
+    "option_val": "中国广东 Cantonese",
+    "display": "中国（广东）— 岭南面貌，五官柔和精致，现代都市灵动",
+    "prompt": "Cantonese / Lingnan: soft yet refined facial features, warm golden skin tone, sharp modern urban vitality, intelligent lively expression. DO NOT substitute."
+  },
+  "jiangnan": {
+    "option_val": "中国江南 Jiangnan",
+    "display": "中国（江南）— 温婉秀气，线条柔和，古典东方美",
+    "prompt": "Jiangnan Chinese: gentle and elegant, soft facial lines, fair porcelain skin, classical and warm Eastern beauty, delicate oval face. DO NOT substitute."
+  },
+  "hk/macau": {
+    "option_val": "中国港澳 HK/Macau",
+    "display": "中国（港澳）— 妆容精致，干练职场精英，现代摩登",
+    "prompt": "HK/Macau cosmopolitan: polished makeup and styling, sharp capable professional elite aura, modern sophisticated city look, defined brows, confident gaze. DO NOT substitute."
+  },
+  "taiwanese": {
+    "option_val": "中国台湾 Taiwanese",
+    "display": "中国（台湾）— 清新甜美，亲和力强，日系文青感",
+    "prompt": "Taiwanese: fresh sweet natural charm, highly approachable friendly features, Japanese-influenced literary artsy softness, rounded warm eyes. DO NOT substitute."
+  },
+  "j-idol": {
+    "option_val": "日本偶像 J-Idol",
+    "display": "日本（偶像）— 元气甜美，大眼，笑容极具感染力",
+    "prompt": "J-Idol: genki energetic sweet style, large sparkling eyes, extremely infectious warm smile, doll-like delicate small V-line face, flawless polished youthful beauty. NOT Western. DO NOT substitute."
+  },
+  "j-natural": {
+    "option_val": "日本素人 J-Natural",
+    "display": "日本（素人）— 自然邻家，微瑕疵美，真实生活感",
+    "prompt": "J-Natural / girl-next-door: unadorned natural features, visible minor imperfections for realistic texture, warm natural skin, relaxed minimal makeup, approachable everyday authenticity. DO NOT substitute."
+  },
+  "j-office": {
+    "option_val": "日本通勤 J-Office",
+    "display": "日本（通勤）— 淡雅得体，知性温柔，微熟感",
+    "prompt": "J-Office / commuter: understated elegant light makeup, intellectual gentle mature subtle charm, refined soft professionalism, clean neat appearance. DO NOT substitute."
+  },
+  "j-harajuku": {
+    "option_val": "日本原宿 J-Harajuku",
+    "display": "日本（原宿）— 大胆前卫，亚文化个性张力",
+    "prompt": "J-Harajuku: bold avant-garde street style, strong subcultural identity and rebellious creative tension, experimental makeup and hair colors. DO NOT substitute."
+  },
+  "k-idol": {
+    "option_val": "韩国偶像 K-Idol",
+    "display": "韩国（偶像）— 冷白皮，五官精致对称，舞台感",
+    "prompt": "K-Idol: cool-toned porcelain white skin #FFF8F5, extremely refined perfectly symmetrical features, flawless stage-ready polished makeup, V-line jaw, defined double eyelid, aegyo-sal. NOT Western. DO NOT substitute."
+  },
+  "k-natural": {
+    "option_val": "韩国素人 K-Natural",
+    "display": "韩国（素人）— 清新自然，单眼皮/内双，气质干净",
+    "prompt": "K-Natural: fresh clean natural street style, natural single eyelid or subtle inner double eyelid preserved, clean pure气质, minimal fresh makeup, relatable beauty. DO NOT substitute."
+  },
+  "k-model": {
+    "option_val": "韩国网拍 K-Model",
+    "display": "韩国（网拍）— 时尚灵动，日常潮流服饰展示感",
+    "prompt": "K-Model / Dongdaemun web-shoot: high fashion sensibility, lively expressive灵动表情, perfectly suited for casual trendy apparel display, confident pose-ready. DO NOT substitute."
+  },
+  "k-minimal": {
+    "option_val": "韩国极简 K-Minimal",
+    "display": "韩国（极简）— 清冷疏离，面部留白多，高级感",
+    "prompt": "K-Minimal: cool-toned aloof detached elegance, generous facial negative space for high-end minimalist aesthetic, androgynous高级感, sharp clean lines. DO NOT substitute."
+  },
+  "chinese american": {
+    "option_val": "美国华裔 Chinese American",
+    "display": "美国（华裔）— ABC风格，亚洲骨相+欧美审美，阳光自信",
+    "prompt": "Chinese American ABC: Asian bone structure with Western makeup aesthetic, healthy confident sun-kissed glow, athletic radiant大方 beauty, straight or wavy dark hair. DO NOT substitute."
+  },
+  "caucasian american": {
+    "option_val": "美国白人 Caucasian American",
+    "display": "美国（白）— 金发碧眼或棕发，五官立体，主流电商审美",
+    "prompt": "Caucasian American: classic blonde and blue-eyed or brunette, standard three-dimensional五官, mainstream international ecommerce aesthetic, defined nose bridge, varied eye colors. DO NOT substitute."
+  },
+  "african american": {
+    "option_val": "美国非裔 African American",
+    "display": "美国（非裔）— 深邃肤色，饱满五官，街头运动感",
+    "prompt": "African American: deep rich complexion, full饱满 facial features, strong streetwear athletic energy, defined muscle tone, natural hair texture (coils/braids/locs), full lips. DO NOT substitute."
+  },
+  "latino american": {
+    "option_val": "美国拉美 Latino American",
+    "display": "美国（拉美）— 小麦/古铜肌，热情奔放，曲线丰满",
+    "prompt": "Latino American: wheat or bronze sun-kissed skin, passionate energetic warm presence, curvy丰满 body, warm mix of Indigenous and European traits, dark expressive eyes. DO NOT substitute."
+  },
+  "us plus-size": {
+    "option_val": "美国大码 US Plus-Size",
+    "display": "美国（大码）— 丰满自信，面庞圆润健康，真实体态美",
+    "prompt": "US Plus-Size commercial: confident丰满 body-positive, round healthy glowing face, authentic真实 body representation, warm approachable smile. DO NOT substitute."
+  },
+  "slavic": {
+    "option_val": "东欧斯拉夫 Slavic",
+    "display": "东欧（斯拉夫）— 冷白皮，金发碧眼，高贵精致",
+    "prompt": "Slavic: cool-toned pale white skin, classic blonde hair and blue eyes, extremely refined delicate高贵 features, defined bone structure, high cheekbones. DO NOT substitute."
+  },
+  "ethereal east": {
+    "option_val": "东欧清冷 Ethereal East EU",
+    "display": "东欧（清冷）— 超模骨相，凌厉下颌线，清冷疏离",
+    "prompt": "Ethereal East European / supermodel bone structure: sharp凌厉 jawline and sculpted hollow cheeks, intense cold aloof detached gaze, extremely slender, haute couture proportions. DO NOT substitute."
+  },
+  "elf-like": {
+    "option_val": "东欧精灵 Elf-like East EU",
+    "display": "东欧（精灵）— 小巧灵动，空灵脆弱，童话非现实感",
+    "prompt": "Elf-like East European: small delicate灵动 features, ethereal otherworldly空灵 beauty, fragile and fairy-tale non-realistic aesthetic, wide-set pale eyes, platinum hair. DO NOT substitute."
+  },
+  "french": {
+    "option_val": "西欧法式 French",
+    "display": "西欧（法式）— 野生眉微乱卷发，不经意时髦慵懒优雅",
+    "prompt": "French: natural wild brows and slightly undone wavy hair, effortless nonchalant时髦慵懒 elegance, subtle refined features, chestnut to light brown hair, slim build. DO NOT substitute."
+  },
+  "british": {
+    "option_val": "西欧英伦 British",
+    "display": "西欧（英伦）— 复古贵族感，轮廓深邃，气质内敛",
+    "prompt": "British: vintage classical贵族 nostalgic aesthetic, deep-set facial contours, restrained低调内敛 temperament, fair porcelain or rosy complexion, auburn to brunette hair. DO NOT substitute."
+  },
+  "nordic cool": {
+    "option_val": "北欧冷感 Nordic Cool",
+    "display": "北欧（冷感白皮）— 极度白皙浅色瞳孔，雌雄同体高级冷淡",
+    "prompt": "Nordic cool-toned pale: extremely fair translucent白皙 skin, light-colored pale瞳孔, androgynous雌雄同体 high-fashion cold indifference, platinum to ash blonde hair, angular bone structure. DO NOT substitute."
+  },
+  "italian": {
+    "option_val": "南欧意式 Italian",
+    "display": "南欧（意式明艳）— 浓眉大眼毛发浓密，性感热情",
+    "prompt": "Italian / Mediterranean bright明艳: bold浓眉大眼, dense thick lashes and hair, passionate性感 warm features, warm olive skin, expressive dark brown eyes, Roman nose. DO NOT substitute."
+  },
+  "greek classic": {
+    "option_val": "南欧古典 Greek Classic",
+    "display": "南欧（古典雕塑）— 鼻梁高挺直达额头，完美骨相",
+    "prompt": "Greek classical sculpture: nose bridge high直通 forehead, perfect bone structure like classical marble statue, timeless symmetrical proportions. DO NOT substitute."
+  },
+  "bollywood": {
+    "option_val": "南亚宝莱坞 Bollywood",
+    "display": "南亚（宝莱坞）— 深邃眼窝浓密卷发，华丽大气色彩张力强",
+    "prompt": "Bollywood: extremely deep-set深邃 eye sockets, dense thick curly lashes and glossy long dark hair, intense color drama and华丽 opulent presence, warm golden-brown skin. DO NOT substitute."
+  },
+  "south asian natural": {
+    "option_val": "南亚素人 South Asian Natural",
+    "display": "南亚（素人）— 深色肌肤，传统古典特征，地域风情",
+    "prompt": "South Asian natural: deeper skin tone with traditional classical indigenous features, strong regional cultural authenticity, natural dark hair and eyes, gentle everyday presence. DO NOT substitute."
+  },
+  "indo-european": {
+    "option_val": "南亚印欧混血 Indo-European",
+    "display": "南亚（印欧混血）— 深邃骨相+现代妆容，高辨识度",
+    "prompt": "Indo-European mixed:融合 South Asian deep bone structure with European modern makeup sensibility, highly distinctive辨识度 in international commercial and beauty modeling. DO NOT substitute."
+  },
+  "thai mixed": {
+    "option_val": "东南亚泰式混血 Thai Mixed",
+    "display": "东南亚（泰式混血）— 亚洲柔和+欧美立体，适合美妆快时尚",
+    "prompt": "Thai mixed-heritage:融合 Asian柔和 softness with European three-dimensionality立体感, extremely well-suited for beauty and fast-fashion, warm golden-tan skin, defined nose. DO NOT substitute."
+  },
+  "tropical se": {
+    "option_val": "东南亚热带阳光 Tropical SE Asia",
+    "display": "东南亚（热带阳光）— 健康深肤色，笑容感染力，海岛度假风",
+    "prompt": "Tropical Southeast Asian: deeper healthy sun-kissed深肤色, extremely infectious warm smile, perfect for island resort海岛度假 aesthetic, natural warm presence. DO NOT substitute."
+  },
+  "vietnamese": {
+    "option_val": "东南亚越式温婉 Vietnamese",
+    "display": "东南亚（越式温婉）— 身材纤细，五官柔和平淡，古典温婉",
+    "prompt": "Vietnamese: slender纤细 build, gentle柔和平淡 facial features, traditional classical温婉 charm, understated natural elegance. DO NOT substitute."
+  },
+  "arab": {
+    "option_val": "中东阿拉伯 Arab",
+    "display": "中东（阿拉伯）— 攻击性浓颜，轮廓极深，浓重眼妆神秘感",
+    "prompt": "Arab: powerfully striking攻击性浓颜, extremely deep-set facial contours, heavy intense eye makeup creating神秘 mystery, thick dark hair, prominent refined nose, defined brows. DO NOT substitute."
+  },
+  "persian": {
+    "option_val": "中东波斯 Persian",
+    "display": "中东（波斯）— 明艳大气精致，异域风情贵气",
+    "prompt": "Persian: bright明艳大气 and exquisitely精致 features, strong exotic异域 allure and noble贵气 presence, defined aristocratic bone structure. DO NOT substitute."
+  },
+  "african couture": {
+    "option_val": "非洲高定黑珍珠 African Couture",
+    "display": "非洲（高定黑珍珠）— 顶级超模，极品头身比，黝黑发亮高端时尚感",
+    "prompt": "African Couture / top supermodel:极品头身比 elite proportions and bone structure, skin黝黑发亮 radiant glossy dark, extreme high-fashion高端时尚 editorial presence, striking cheekbones. DO NOT substitute."
+  },
+  "african natural": {
+    "option_val": "非洲原生深肤色 African Natural",
+    "display": "非洲（原生深肤色）— 深色肌自然纹理，野生力量感",
+    "prompt": "African natural / indigenous: deep skin with natural texture质感, strong raw野生 primal power and presence, authentic traditional features, natural hair. DO NOT substitute."
+  },
+  "brazilian sun": {
+    "option_val": "南美巴西阳光 Brazilian Sun",
+    "display": "南美（巴西阳光）— 古铜肌阳光健美，运动活力表现力强",
+    "prompt": "Brazilian sun-kissed: sun-drenched athletic古铜健美 skin, full of sporty运动活力 and strong expressive表现力, toned fit build, warm vibrant smile. DO NOT substitute."
+  },
+  "colombian curvy": {
+    "option_val": "南美哥伦比亚丰满 Colombian Curvy",
+    "display": "南美（哥伦比亚丰满）— 热情明艳，曲线夸张丰满，性感",
+    "prompt": "Colombian curvy:热情明艳 passionate bright features, exaggerated dramatic夸张丰满 curves, strong性感 presence, warm olive to tan skin. DO NOT substitute."
+  },
+  "aussie fit": {
+    "option_val": "澳洲户外健美 Aussie Fit",
+    "display": "澳洲（户外健美）— 金发小麦肌，冲浪运动健康感",
+    "prompt": "Aussie outdoor fitness: blonde hair with常年日照 year-round sun-kissed wheat-toned小麦 skin, surfing冲浪 and sports健康 outdoor glow, athletic toned build, freckles common. DO NOT substitute."
+  },
+  "maori native": {
+    "option_val": "新西兰毛利 Maori Native",
+    "display": "新西兰（毛利原生）— 五官开阔，波利尼西亚民族力量感",
+    "prompt": "Maori / Polynesian native: broad开阔五官, unique distinctive波利尼西亚 ethnic strength and presence, warm brown skin, strong bone structure. DO NOT substitute."
+  }
+}

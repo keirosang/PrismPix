@@ -366,185 +366,42 @@ def render_prompts_markdown(
     return "\n".join(lines)
 
 
-# ── 平台规则 (影响背景色/文字限制/预留空间/图片尺寸) ──
+# ── 平台规则 (从 JSON 动态加载) ──
 
-PLATFORM_OPTIONS: list[tuple[str, str]] = [
-    ("", "—— 不指定平台 ——"),
-    # 国内
-    ("淘宝", "淘宝 Taobao"),
-    ("天猫", "天猫 Tmall"),
-    ("京东", "京东 JD.com"),
-    ("拼多多", "拼多多 Pinduoduo"),
-    ("抖音电商", "抖音电商 Douyin Shop"),
-    ("小红书", "小红书 Xiaohongshu / RED"),
-    ("快手", "快手 Kuaishou"),
-    # 国际
-    ("Amazon", "Amazon (美国/欧洲/日本)"),
-    ("eBay", "eBay"),
-    ("Shopify", "Shopify 独立站"),
-    ("Shopee", "Shopee (东南亚/拉美)"),
-    ("Lazada", "Lazada (东南亚)"),
-    ("Walmart", "Walmart Marketplace"),
-    ("Etsy", "Etsy (手工/复古)"),
-    ("Temu", "Temu"),
-    ("SHEIN", "SHEIN"),
-]
+import json
+from pathlib import Path
 
-PLATFORM_RULES: dict[str, str] = {
-    "淘宝": (
-        "Platform: Taobao. Main images 1:1 800x800+ min. "
-        "Top center 200×100px area kept empty for price/sale overlay. "
-        "Detail images prefer 3:4 aspect ratio. "
-        "Multi-angle and detail shots encouraged."
-    ),
-    "天猫": (
-        "Platform: Tmall. Premium positioning. "
-        "Main images 1:1 800x800+ min, pure white #FFFFFF background preferred. "
-        "Top center 200×100px area kept empty. "
-        "Detail images 3:4 ratio. Logo area top-left reserved."
-    ),
-    "京东": (
-        "Platform: JD.com. Clean white #FFFFFF background required for main images. "
-        "Main images 1:1 800x800+ min. "
-        "No text/watermarks on main images. "
-        "Detail images 3:4 ratio, informative infographics encouraged."
-    ),
-    "拼多多": (
-        "Platform: Pinduoduo. Aggressive value positioning. "
-        "Main images 1:1 800x800+. Price overlay space top center. "
-        "Bright, high-contrast visuals. Text-heavy detail images common."
-    ),
-    "抖音电商": (
-        "Platform: Douyin Shop. Short-video-first platform. "
-        "Images 3:4 or 9:16 vertical preferred. "
-        "Lifestyle, authentic, UGC-style visuals perform best. "
-        "Avoid overly polished studio look — natural lighting preferred."
-    ),
-    "小红书": (
-        "Platform: Xiaohongshu/RED. Lifestyle-community-commerce hybrid. "
-        "Images 3:4 vertical preferred. "
-        "Aesthetic, photogenic, editorial feel. Warm tones. "
-        "UGC-authentic style. Chinese text 「」wrapped in clean layouts."
-    ),
-    "快手": (
-        "Platform: Kuaishou. Short-video driven. "
-        "Images 3:4 or 1:1. Authentic, relatable, real-life style. "
-        "Bright, high-contrast. Direct value messaging."
-    ),
-    "Amazon": (
-        "Platform: Amazon. CRITICAL: main images MUST have pure white #FFFFFF "
-        "background (RGB 255,255,255). No text, logos, watermarks, or inset images "
-        "on main image. Product must fill 85%+ of frame. "
-        "2000x2000px min recommended. Detail images allow text/infographics."
-    ),
-    "eBay": (
-        "Platform: eBay. Clean background preferred. "
-        "Main images 1600x1600px min. No watermarks or borders. "
-        "Product should fill most of frame."
-    ),
-    "Shopify": (
-        "Platform: Shopify standalone store. Flexible, brand-driven. "
-        "2048x2048px recommended. Lifestyle and editorial styles encouraged. "
-        "Consistent brand aesthetic across all images."
-    ),
-    "Shopee": (
-        "Platform: Shopee. Main images 1:1 800x800+ min. "
-        "Clean background preferred. Top center overlay space for promotions. "
-        "3:4 detail images. Multi-language text support (local languages)."
-    ),
-    "Lazada": (
-        "Platform: Lazada. Main images 1:1 800x800+ min. "
-        "White background preferred. Product 70-80% of frame. "
-        "3:4 detail images. Local-language text support."
-    ),
-    "Walmart": (
-        "Platform: Walmart Marketplace. Main images 2000x2000px min. "
-        "White #FFFFFF background. Product fills 85%+. "
-        "No text or logos on main image."
-    ),
-    "Etsy": (
-        "Platform: Etsy. Handmade/vintage/creative marketplace. "
-        "Warm, authentic, handmade aesthetic. Lifestyle and detail shots. "
-        "5:4 or 4:3 ratio common. Natural lighting, editorial style."
-    ),
-    "Temu": (
-        "Platform: Temu. Ultra-value positioning. "
-        "Bright, bold, high-contrast visuals. Price-focused. "
-        "1:1 main images. Aggressive promotional style."
-    ),
-    "SHEIN": (
-        "Platform: SHEIN. Fast-fashion ecommerce. "
-        "1:1 main images. Model/lifestyle-focused. "
-        "Young, trendy, editorial fashion aesthetic. "
-        "3:4 detail images acceptable."
-    ),
-}
+_METADATA_DIR = Path(__file__).resolve().parent / "metadata"
 
-# ── 语言选项 (影响图片内文字所使用的语言) ──
 
-LANGUAGE_OPTIONS: list[tuple[str, str]] = [
-    ("", "—— 不指定 (跟随平台) ——"),
-    ("中文", "中文 (Simplified Chinese)"),
-    ("英文", "English"),
-    ("日文", "日本語 (Japanese)"),
-    ("韩文", "한국어 (Korean)"),
-    ("法文", "Français (French)"),
-    ("西班牙文", "Español (Spanish)"),
-    ("德文", "Deutsch (German)"),
-    ("俄文", "Русский (Russian)"),
-    ("阿拉伯文", "العربية (Arabic)"),
-    ("葡萄牙文", "Português (Portuguese)"),
-    ("意大利文", "Italiano (Italian)"),
-    ("泰文", "ภาษาไทย (Thai)"),
-    ("越南文", "Tiếng Việt (Vietnamese)"),
-    ("印尼文", "Bahasa Indonesia"),
-    ("土耳其文", "Türkçe (Turkish)"),
-]
+def _load_platforms() -> tuple[list[tuple[str, str]], dict[str, str]]:
+    path = _METADATA_DIR / "platforms.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        options = [tuple(item) for item in data.get("options", [])]
+        rules = data.get("rules", {})
+        return options, rules
+    except Exception as e:
+        from ecom_image_gen.logging_setup import LOG
+        LOG.error("无法加载 platforms.json 元数据: %s", e)
+        return [], {}
 
-LANGUAGE_RULES: dict[str, str] = {
-    "中文": (
-        "All on-image text must be in Simplified Chinese. "
-        "Wrap Chinese text with「」quotation marks for better rendering accuracy. "
-        "Headline 28-48pt, subtitle 16-20pt, label 10-14pt. "
-        "Complex-stroke characters replace with simpler synonyms."
-    ),
-    "英文": (
-        "All on-image text must be in English. "
-        "Use Didot serif for headlines, SF Pro Display sans-serif for body. "
-        "Headline 28-48pt, subtitle 16-20pt, label 10-14pt."
-    ),
-    "日文": (
-        "All on-image text must be in Japanese. "
-        "Use clean Japanese sans-serif (Hiragino/Noto Sans JP style). "
-        "Headline 32-48pt, subtitle 18-22pt, label 12-16pt. "
-        "Kanji/Kana mixing should look natural."
-    ),
-    "韩文": (
-        "All on-image text must be in Korean. "
-        "Use clean Korean sans-serif (Noto Sans KR/Apple SD Gothic Neo style). "
-        "Headline 32-48pt, subtitle 18-22pt, label 12-16pt."
-    ),
-    "法文": (
-        "All on-image text must be in French. "
-        "Use Didot serif for headlines (classic French typography), "
-        "SF Pro Display for body. Accents must render correctly (é,è,ê,à,ç, etc.)."
-    ),
-    "西班牙文": (
-        "All on-image text must be in Spanish. "
-        "Use clean modern serif for headlines, sans-serif for body. "
-        "Accents and ñ must render correctly."
-    ),
-    "德文": (
-        "All on-image text must be in German. "
-        "Use clean sans-serif (DIN/Helvetica style). "
-        "Umlauts (ä,ö,ü) and ß must render correctly."
-    ),
-    "俄文": (
-        "All on-image text must be in Russian. "
-        "Use Cyrillic-compatible clean sans-serif. "
-        "Cyrillic characters must render cleanly — verify accuracy."
-    ),
-}
+
+def _load_languages() -> tuple[list[tuple[str, str]], dict[str, str]]:
+    path = _METADATA_DIR / "languages.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        options = [tuple(item) for item in data.get("options", [])]
+        rules = data.get("rules", {})
+        return options, rules
+    except Exception as e:
+        from ecom_image_gen.logging_setup import LOG
+        LOG.error("无法加载 languages.json 元数据: %s", e)
+        return [], {}
+
+
+PLATFORM_OPTIONS, PLATFORM_RULES = _load_platforms()
+LANGUAGE_OPTIONS, LANGUAGE_RULES = _load_languages()
 
 
 def get_platform_rule(platform: str) -> str:

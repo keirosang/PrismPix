@@ -565,156 +565,18 @@ def _build_model_spec(model_attrs: str, mode: str) -> str:
     """
     attrs_lower = model_attrs.lower()
 
-    # ── 模特特色 → 面部特征映射 (50 种, 用户扩展版, 长 key 优先) ──
-    _ethnicity_entries: list[tuple[str, str]] = [
-        # ═══ 中国 (8) ═══
-        ("north china", "Northern Chinese Han: dignified and poised features, "
-            "strong angular bone structure, mature and composed temperament, "
-            "fair warm skin, almond dark brown eyes. DO NOT substitute."),
-        ("northwest china", "Northwestern Chinese: rugged and primal strength, "
-            "sharply defined facial contours, healthy sun-toned complexion, "
-            "strong brow, deep-set eyes. DO NOT substitute."),
-        ("tibetan", "Tibetan: high-altitude rosy cheeks or healthy wheat-toned skin, "
-            "pure sincere eyes, raw natural untamed beauty, defined cheekbones. "
-            "DO NOT substitute."),
-        ("uyghur", "Uyghur / Xinjiang minority: exotic intense features, "
-            "high nose bridge and deep-set eyes, extremely strong three-dimensional "
-            "facial structure, Central Asian mixed heritage. DO NOT substitute."),
-        ("cantonese", "Cantonese / Lingnan: soft yet refined facial features, "
-            "warm golden skin tone, sharp modern urban vitality, intelligent "
-            "lively expression. DO NOT substitute."),
-        ("jiangnan", "Jiangnan Chinese: gentle and elegant, soft facial lines, "
-            "fair porcelain skin, classical and warm Eastern beauty, "
-            "delicate oval face. DO NOT substitute."),
-        ("hk/macau", "HK/Macau cosmopolitan: polished makeup and styling, "
-            "sharp capable professional elite aura, modern sophisticated city look, "
-            "defined brows, confident gaze. DO NOT substitute."),
-        ("taiwanese", "Taiwanese: fresh sweet natural charm, highly approachable "
-            "friendly features, Japanese-influenced literary artsy softness, "
-            "rounded warm eyes. DO NOT substitute."),
-        # ═══ 日本 (4) ═══
-        ("j-idol", "J-Idol: genki energetic sweet style, large sparkling eyes, "
-            "extremely infectious warm smile, doll-like delicate small V-line face, "
-            "flawless polished youthful beauty. NOT Western. DO NOT substitute."),
-        ("j-natural", "J-Natural / girl-next-door: unadorned natural features, "
-            "visible minor imperfections for realistic texture, warm natural skin, "
-            "relaxed minimal makeup, approachable everyday authenticity. DO NOT substitute."),
-        ("j-office", "J-Office / commuter: understated elegant light makeup, "
-            "intellectual gentle mature subtle charm, refined soft professionalism, "
-            "clean neat appearance. DO NOT substitute."),
-        ("j-harajuku", "J-Harajuku: bold avant-garde street style, "
-            "strong subcultural identity and rebellious creative tension, "
-            "experimental makeup and hair colors. DO NOT substitute."),
-        # ═══ 韩国 (4) ═══
-        ("k-idol", "K-Idol: cool-toned porcelain white skin #FFF8F5, "
-            "extremely refined perfectly symmetrical features, flawless stage-ready "
-            "polished makeup, V-line jaw, defined double eyelid, aegyo-sal. "
-            "NOT Western. DO NOT substitute."),
-        ("k-natural", "K-Natural: fresh clean natural street style, "
-            "natural single eyelid or subtle inner double eyelid preserved, "
-            "clean pure气质, minimal fresh makeup, relatable beauty. DO NOT substitute."),
-        ("k-model", "K-Model / Dongdaemun web-shoot: high fashion sensibility, "
-            "lively expressive灵动表情, perfectly suited for casual trendy apparel "
-            "display, confident pose-ready. DO NOT substitute."),
-        ("k-minimal", "K-Minimal: cool-toned aloof detached elegance, "
-            "generous facial negative space for high-end minimalist aesthetic, "
-            "androgynous高级感, sharp clean lines. DO NOT substitute."),
-        # ═══ 美国 (5) ═══
-        ("chinese american", "Chinese American ABC: Asian bone structure with "
-            "Western makeup aesthetic, healthy confident sun-kissed glow, "
-            "athletic radiant大方 beauty, straight or wavy dark hair. DO NOT substitute."),
-        ("caucasian american", "Caucasian American: classic blonde and blue-eyed "
-            "or brunette, standard three-dimensional五官, mainstream international "
-            "ecommerce aesthetic, defined nose bridge, varied eye colors. DO NOT substitute."),
-        ("african american", "African American: deep rich complexion, full饱满 "
-            "facial features, strong streetwear athletic energy, defined muscle tone, "
-            "natural hair texture (coils/braids/locs), full lips. DO NOT substitute."),
-        ("latino american", "Latino American: wheat or bronze sun-kissed skin, "
-            "passionate energetic warm presence, curvy丰满 body, "
-            "warm mix of Indigenous and European traits, dark expressive eyes. "
-            "DO NOT substitute."),
-        ("us plus-size", "US Plus-Size commercial: confident丰满 body-positive, "
-            "round healthy glowing face, authentic真实 body representation, "
-            "warm approachable smile. DO NOT substitute."),
-        # ═══ 东欧 (3) ═══
-        ("slavic", "Slavic: cool-toned pale white skin, classic blonde hair "
-            "and blue eyes, extremely refined delicate高贵 features, "
-            "defined bone structure, high cheekbones. DO NOT substitute."),
-        ("ethereal east", "Ethereal East European / supermodel bone structure: "
-            "sharp凌厉 jawline and sculpted hollow cheeks, intense cold aloof "
-            "detached gaze, extremely slender, haute couture proportions. DO NOT substitute."),
-        ("elf-like", "Elf-like East European: small delicate灵动 features, "
-            "ethereal otherworldly空灵 beauty, fragile and fairy-tale non-realistic "
-            "aesthetic, wide-set pale eyes, platinum hair. DO NOT substitute."),
-        # ═══ 西欧 (2) ═══
-        ("french", "French: natural wild brows and slightly undone wavy hair, "
-            "effortless nonchalant时髦慵懒 elegance, subtle refined features, "
-            "chestnut to light brown hair, slim build. DO NOT substitute."),
-        ("british", "British: vintage classical贵族 nostalgic aesthetic, "
-            "deep-set facial contours, restrained低调内敛 temperament, "
-            "fair porcelain or rosy complexion, auburn to brunette hair. DO NOT substitute."),
-        # ═══ 北欧/南欧 (3) ═══
-        ("nordic cool", "Nordic cool-toned pale: extremely fair translucent白皙 skin, "
-            "light-colored pale瞳孔, androgynous雌雄同体 high-fashion cold indifference, "
-            "platinum to ash blonde hair, angular bone structure. DO NOT substitute."),
-        ("italian", "Italian / Mediterranean bright明艳: bold浓眉大眼, "
-            "dense thick lashes and hair, passionate性感 warm features, "
-            "warm olive skin, expressive dark brown eyes, Roman nose. DO NOT substitute."),
-        ("greek classic", "Greek classical sculpture: nose bridge high直通 forehead, "
-            "perfect bone structure like classical marble statue, "
-            "timeless symmetrical proportions. DO NOT substitute."),
-        # ═══ 南亚 (3) ═══
-        ("bollywood", "Bollywood: extremely deep-set深邃 eye sockets, "
-            "dense thick curly lashes and glossy long dark hair, "
-            "intense color drama and华丽 opulent presence, warm golden-brown skin. "
-            "DO NOT substitute."),
-        ("south asian natural", "South Asian natural: deeper skin tone with "
-            "traditional classical indigenous features, strong regional cultural "
-            "authenticity, natural dark hair and eyes, gentle everyday presence. "
-            "DO NOT substitute."),
-        ("indo-european", "Indo-European mixed:融合 South Asian deep bone structure "
-            "with European modern makeup sensibility, highly distinctive辨识度 in "
-            "international commercial and beauty modeling. DO NOT substitute."),
-        # ═══ 东南亚 (3) ═══
-        ("thai mixed", "Thai mixed-heritage:融合 Asian柔和 softness with "
-            "European three-dimensionality立体感, extremely well-suited for beauty "
-            "and fast-fashion, warm golden-tan skin, defined nose. DO NOT substitute."),
-        ("tropical se", "Tropical Southeast Asian: deeper healthy sun-kissed深肤色, "
-            "extremely infectious warm smile, perfect for island resort海岛度假 aesthetic, "
-            "natural warm presence. DO NOT substitute."),
-        ("vietnamese", "Vietnamese: slender纤细 build, gentle柔和平淡 facial features, "
-            "traditional classical温婉 charm, understated natural elegance. "
-            "DO NOT substitute."),
-        # ═══ 中东 (2) ═══
-        ("arab", "Arab: powerfully striking攻击性浓颜, extremely deep-set facial "
-            "contours, heavy intense eye makeup creating神秘 mystery, thick dark hair, "
-            "prominent refined nose, defined brows. DO NOT substitute."),
-        ("persian", "Persian: bright明艳大气 and exquisitely精致 features, "
-            "strong exotic异域 allure and noble贵气 presence, "
-            "defined aristocratic bone structure. DO NOT substitute."),
-        # ═══ 非洲 (2) ═══
-        ("african couture", "African Couture / top supermodel:极品头身比 elite "
-            "proportions and bone structure, skin黝黑发亮 radiant glossy dark, "
-            "extreme high-fashion高端时尚 editorial presence, striking cheekbones. "
-            "DO NOT substitute."),
-        ("african natural", "African natural / indigenous: deep skin with natural "
-            "texture质感, strong raw野生 primal power and presence, "
-            "authentic traditional features, natural hair. DO NOT substitute."),
-        # ═══ 南美 (2) ═══
-        ("brazilian sun", "Brazilian sun-kissed: sun-drenched athletic古铜健美 skin, "
-            "full of sporty运动活力 and strong expressive表现力, "
-            "toned fit build, warm vibrant smile. DO NOT substitute."),
-        ("colombian curvy", "Colombian curvy:热情明艳 passionate bright features, "
-            "exaggerated dramatic夸张丰满 curves, strong性感 presence, "
-            "warm olive to tan skin. DO NOT substitute."),
-        # ═══ 大洋洲 (2) ═══
-        ("aussie fit", "Aussie outdoor fitness: blonde hair with常年日照 year-round "
-            "sun-kissed wheat-toned小麦 skin, surfing冲浪 and sports健康 outdoor glow, "
-            "athletic toned build, freckles common. DO NOT substitute."),
-        ("maori native", "Maori / Polynesian native: broad开阔五官, "
-            "unique distinctive波利尼西亚 ethnic strength and presence, "
-            "warm brown skin, strong bone structure. DO NOT substitute."),
-    ]
+    # ── 模特特色 → 面部特征映射 (从 JSON 动态加载) ──
+    import json
+    from pathlib import Path
+    metadata_dir = Path(__file__).resolve().parent / "metadata"
+    ethnicities_path = metadata_dir / "ethnicities.json"
+    
+    try:
+        ethnicities = json.loads(ethnicities_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        from ecom_image_gen.logging_setup import LOG
+        LOG.error("无法加载 ethnicities.json: %s", e)
+        ethnicities = {}
 
     # ── 肤色映射 ──
     _skin_tone_map = {
@@ -739,9 +601,12 @@ def _build_model_spec(model_attrs: str, mode: str) -> str:
     }
 
     lines: list[str] = []
+    
     # 种族 (按顺序匹配, 长 key 优先)
-    for key, desc in _ethnicity_entries:
+    sorted_keys = sorted(ethnicities.keys(), key=len, reverse=True)
+    for key in sorted_keys:
         if key in attrs_lower:
+            desc = ethnicities[key]["prompt"]
             lines.append(f"RACE/ETHNICITY: {desc}")
             break
 

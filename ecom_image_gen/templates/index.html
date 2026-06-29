@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PrismPix</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div id="app">
+
+<!-- ═══ LEFT: Options ═══ -->
+<div class="col" id="leftCol">
+<div class="col-head">📋 产品信息</div>
+<div class="col-body">
+<fieldset><legend>基本</legend>
+  <label class="required">SKU</label><input id="sku" value="DEMO">
+  <label class="required">产品图片</label><input type="file" id="imageFile" accept="image/*">
+</fieldset>
+<fieldset><legend>属性</legend>
+  <label>类目</label>
+  <select id="category">
+    {% for val, label in categories %}
+      <option value="{{ val }}">{{ label }}</option>
+    {% endfor %}
+  </select>
+  <label>风格</label>
+  <select id="style">
+    {% for val, label in styles %}
+      <option value="{{ val }}">{{ label }}</option>
+    {% endfor %}
+  </select>
+</fieldset>
+<fieldset><legend>平台 & 语言</legend>
+  <label>平台</label>
+  <select id="platform">
+    {% for val, label in platforms %}
+      <option value="{{ val }}">{{ label }}</option>
+    {% endfor %}
+  </select>
+  <label>语言</label>
+  <select id="language">
+    {% for val, label in languages %}
+      <option value="{{ val }}">{{ label }}</option>
+    {% endfor %}
+  </select>
+</fieldset>
+<fieldset><legend>模特</legend>
+  <div class="form-row">
+    <div>
+      <label>模特特色</label>
+      <select id="model_region">
+        {% for val, label in model_regions %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label>性别</label>
+      <select id="model_gender">
+        {% for val, label in model_genders %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div>
+      <label>年龄</label>
+      <select id="model_age">
+        {% for val, label in model_ages %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label>肤色</label>
+      <select id="model_skin">
+        {% for val, label in model_skin_tones %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label>身材</label>
+      <select id="model_body">
+        {% for val, label in model_body_types %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div>
+      <label>场景</label>
+      <select id="model_scene">
+        {% for val, label in model_scenes %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label>拍摄</label>
+      <select id="shooting_style">
+        {% for val, label in shooting_styles %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label>露脸</label>
+      <select id="face_visible">
+        {% for val, label in face_options %}
+          <option value="{{ val }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</fieldset>
+<fieldset><legend>模式</legend>
+  <select id="generation_mode">
+    <option value="full">全套 14 张</option>
+    <option value="hero">主图 5 张</option>
+    <option value="detail">详情 9 张</option>
+    <option value="lookbook">模特套图 5 张</option>
+  </select>
+</fieldset>
+<fieldset><legend>额外需求</legend>
+  <textarea id="additional_requirements" placeholder="暖色背景 #F5F0EB / 不要人物 / ..."></textarea>
+</fieldset>
+</div>
+<div class="col-foot">
+  <label style="display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:6px;cursor:pointer">
+    <input type="checkbox" id="forceRegen" style="width:auto"> 强制重新分析 (忽略缓存)
+  </label>
+  <button class="btn btn-primary" id="btnAnalyze" onclick="doAnalyze()">🔍 分析产品</button>
+  <div class="status-msg info" style="margin-top:6px;display:none" id="leftStatus"></div>
+</div>
+</div>
+
+<!-- ═══ MIDDLE: Prompts ═══ -->
+<div class="col" id="midCol">
+<div class="col-head">📝 提示词 <span style="font-weight:400;font-size:10px;color:#999">(双击编辑)</span></div>
+<div class="col-body" id="promptList">
+  <div class="empty-state"><div class="icon">📭</div>点击左侧「分析产品」<br>生成提示词后将显示在这里</div>
+</div>
+<div class="col-foot">
+  <button class="btn btn-primary" id="btnGenerate" disabled onclick="doGenerateImages()">🖼️ 生成图片</button>
+  <button class="btn btn-secondary" style="margin-top:4px" id="btnCollapseAll" onclick="collapseAll()">折叠全部</button>
+</div>
+</div>
+
+<!-- ═══ RIGHT: Results ═══ -->
+<div class="col" id="rightCol">
+<div class="col-head">📊 进度 & 结果</div>
+<div class="col-body" id="resultArea">
+  <div class="empty-state"><div class="icon">🖼️</div>生成图片后将显示在这里</div>
+</div>
+<div class="col-foot" id="resultFoot" style="display:none">
+  <button class="btn btn-secondary" onclick="downloadAll()">📥 下载全部</button>
+</div>
+</div>
+
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <span class="nav prev" onclick="event.stopPropagation();navLightbox(-1)">‹</span>
+  <span class="nav next" onclick="event.stopPropagation();navLightbox(1)">›</span>
+  <img id="lightboxImg" onclick="event.stopPropagation()">
+</div>
+
+<div class="footer">PrismPix © 2026 · GPL v3</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

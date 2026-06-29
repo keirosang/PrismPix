@@ -1,0 +1,78 @@
+{
+  "options": [
+    [
+      "",
+      "—— 不指定 (跟随平台) ——"
+    ],
+    [
+      "中文",
+      "中文 (Simplified Chinese)"
+    ],
+    [
+      "英文",
+      "English"
+    ],
+    [
+      "日文",
+      "日本語 (Japanese)"
+    ],
+    [
+      "韩文",
+      "한국어 (Korean)"
+    ],
+    [
+      "法文",
+      "Français (French)"
+    ],
+    [
+      "西班牙文",
+      "Español (Spanish)"
+    ],
+    [
+      "德文",
+      "Deutsch (German)"
+    ],
+    [
+      "俄文",
+      "Русский (Russian)"
+    ],
+    [
+      "阿拉伯文",
+      "العربية (Arabic)"
+    ],
+    [
+      "葡萄牙文",
+      "Português (Portuguese)"
+    ],
+    [
+      "意大利文",
+      "Italiano (Italian)"
+    ],
+    [
+      "泰文",
+      "ภาษาไทย (Thai)"
+    ],
+    [
+      "越南文",
+      "Tiếng Việt (Vietnamese)"
+    ],
+    [
+      "印尼文",
+      "Bahasa Indonesia"
+    ],
+    [
+      "土耳其文",
+      "Türkçe (Turkish)"
+    ]
+  ],
+  "rules": {
+    "中文": "All on-image text must be in Simplified Chinese. Wrap Chinese text with「」quotation marks for better rendering accuracy. Headline 28-48pt, subtitle 16-20pt, label 10-14pt. Complex-stroke characters replace with simpler synonyms.",
+    "英文": "All on-image text must be in English. Use Didot serif for headlines, SF Pro Display sans-serif for body. Headline 28-48pt, subtitle 16-20pt, label 10-14pt.",
+    "日文": "All on-image text must be in Japanese. Use clean Japanese sans-serif (Hiragino/Noto Sans JP style). Headline 32-48pt, subtitle 18-22pt, label 12-16pt. Kanji/Kana mixing should look natural.",
+    "韩文": "All on-image text must be in Korean. Use clean Korean sans-serif (Noto Sans KR/Apple SD Gothic Neo style). Headline 32-48pt, subtitle 18-22pt, label 12-16pt.",
+    "法文": "All on-image text must be in French. Use Didot serif for headlines (classic French typography), SF Pro Display for body. Accents must render correctly (é,è,ê,à,ç, etc.).",
+    "西班牙文": "All on-image text must be in Spanish. Use clean modern serif for headlines, sans-serif for body. Accents and ñ must render correctly.",
+    "德文": "All on-image text must be in German. Use clean sans-serif (DIN/Helvetica style). Umlauts (ä,ö,ü) and ß must render correctly.",
+    "俄文": "All on-image text must be in Russian. Use Cyrillic-compatible clean sans-serif. Cyrillic characters must render cleanly — verify accuracy."
+  }
+}
