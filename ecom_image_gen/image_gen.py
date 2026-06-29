@@ -141,6 +141,9 @@ def generate_all_images(
     skipped = 0
 
     for spec in PROMPT_MODULES:
+        if spec.code not in prompts:
+            LOG.warning("跳过 %s: prompts 中无此模块 (当前模式=%s)", spec.code, cfg.generation_mode)
+            continue
         out_path = ws / f"{spec.code}.png"
         if out_path.exists() and out_path.stat().st_size > 0 and not cfg.force:
             skipped += 1
