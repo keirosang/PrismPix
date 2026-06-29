@@ -211,8 +211,24 @@ function resetPromptBtn() {
 // Step 3: Generate Images
 // ═══════════════════════════════════════════════
 async function doGenerateImages() {
-  if (!state.prompts) { alert('请先分析产品'); return; }
+  if (!state.prompts) { alert('请先生成提示词'); return; }
   if (!state.productImage) { alert('请选择产品图片'); return; }
+
+  // 检查提示词是否覆盖当前所选模式的所有模块
+  const mode = document.getElementById('generation_mode').value;
+  const modeCodes = {
+    full: ['H1','H2','H3','H4','H5','D1','D2','D3','D4','D5','D6','D7','D8','D9'],
+    hero: ['H1','H2','H3','H4','H5'],
+    detail: ['D1','D2','D3','D4','D5','D6','D7','D8','D9'],
+    lookbook: ['M1','M2','M3','M4','M5'],
+  }[mode] || [];
+  const missing = modeCodes.filter(c => !state.prompts[c]);
+  if (missing.length > 0) {
+    alert('提示词缺少以下模块: ' + missing.join(', ') +
+          '\n\n请回到上方重新点击「确认并生成提示词」。\n' +
+          '确保提示词生成时的模式和图片生成模式一致。');
+    return;
+  }
 
   const btn = document.getElementById('btnGenerate');
   btn.disabled = true; btn.textContent = '生成中...';
