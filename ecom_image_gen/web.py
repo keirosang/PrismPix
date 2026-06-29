@@ -320,8 +320,10 @@ def run_web(cfg: Config, host: str = "127.0.0.1", port: int = 8000) -> None:
         if not ws:
             return jsonify({"error": "missing ws param"}), 400
         ws_path = Path(ws)
+        if not ws_path.is_absolute():
+            ws_path = Path(__file__).resolve().parent.parent / ws_path
         if not ws_path.exists():
-            return jsonify({"error": "workspace not found"}), 404
+            return jsonify({"error": f"workspace not found: {ws_path}"}), 404
 
         product_path = ws_path / "product.json"
         campaign_path = ws_path / "campaign.json"
