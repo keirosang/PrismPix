@@ -95,6 +95,20 @@ def run_sku(
     prompts_path = ws / "prompts.json"
     from ecom_image_gen.prompt_templates import get_modules_for_mode
     expected_codes = {m.code for m in get_modules_for_mode(cfg.generation_mode)}
+
+    # 如果只要求跑到 Stage2, 提前返回
+    if cfg.generation_mode == "__stage2__":
+        result = {
+            "sku": sku,
+            "workspace": str(ws),
+            "product_name": product.get("product_name"),
+            "product": product,
+            "campaign": campaign,
+        }
+        _progress("done", result=result)
+        LOG.info("Stage1+2 完成 (stop_at_stage=2): %s", sku)
+        return result
+
     _progress("stage3", status="running")
     if prompts_path.exists() and not cfg.force:
         cached = read_json(prompts_path)
@@ -106,7 +120,7 @@ def run_sku(
         else:
             LOG.info("prompts.json 模式不匹配 (缓存=%s 需要=%s), 重新生成",
                      cached_codes, expected_codes)
-            prompts = None  # trigger regeneration below
+            prompts = None
     else:
         prompts = None
 

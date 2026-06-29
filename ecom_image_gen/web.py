@@ -280,7 +280,12 @@ def run_web(cfg: Config, host: str = "127.0.0.1", port: int = 8000) -> None:
 
         run_cfg = dataclasses.replace(cfg)
         run_cfg.enable_generate_images = False  # Analyze only
-        run_cfg.generation_mode = request.form.get("generation_mode", "full").strip() or "full"
+        # stop_at_stage=2 → 只跑 Stage1+2, 返回营销策略供用户确认
+        stop_at = request.form.get("stop_at_stage", "")
+        if stop_at == "2":
+            run_cfg.generation_mode = "__stage2__"
+        else:
+            run_cfg.generation_mode = request.form.get("generation_mode", "full").strip() or "full"
         run_cfg.force = request.form.get("force", "0") == "1"
 
         task_id = _task_manager.create()
@@ -306,6 +311,87 @@ def run_web(cfg: Config, host: str = "127.0.0.1", port: int = 8000) -> None:
         return jsonify({"task_id": task_id, "status": "queued"})
 
     # ── Generate Images Only (from existing prompts) ──
+
+    # ── Step 2: Generate Prompts (Stage3 only, from existing product+campaign) ──
+
+    @app.post("/api/generate-prompts")
+    def api_generate_prompts():
+        ws = request.form.get("ws", "").strip()
+        if not ws:
+            return jsonify({"error": "missing ws param"}), 400
+        ws_path = Path(ws)
+        if not ws_path.exists():
+            return jsonify({"error": "workspace not found"}), 404
+
+        product_path = ws_path / "product.json"
+        campaign_path = ws_path / "campaign.json"
+        if not product_path.exists() or not campaign_path.exists():
+            return jsonify({"error": "product.json or campaign.json missing"}), 404
+
+        try:
+            product = json.loads(product_path.read_text(encoding="utf-8"))
+            campaign = json.loads(campaign_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return jsonify({"error": "invalid JSON in workspace"}), 400
+
+        run_cfg = dataclasses.replace(cfg)
+        run_cfg.generation_mode = request.form.get("generation_mode", "full").strip() or "full"
+        run_cfg.force = request.form.get("force", "0") == "1"
+
+        # 提取所有 request 值 (后台线程不可访问 request)
+        p_category = request.form.get("category", "").strip()
+        p_style = request.form.get("style", "").strip()
+        p_extra = request.form.get("additional_requirements", "").strip()
+        p_platform = request.form.get("platform", "").strip()
+        p_language = request.form.get("language", "").strip()
+        p_model_attrs = _build_model_attrs(request.form)
+        p_model_scene = request.form.get("model_scene", "").strip()
+        p_shooting_style = request.form.get("shooting_style", "").strip()
+        p_face = request.form.get("face_visible", "show").strip()
+        p_sku = request.form.get("sku", "SKU").strip() or "SKU"
+
+        task_id = _task_manager.create()
+
+        def _run_prompts():
+            try:
+                from ecom_image_gen.client import build_client
+                from ecom_image_gen.cache import PromptCache
+                from ecom_image_gen.stage3 import stage3_generate_prompts
+                from ecom_image_gen.workspace import save_outputs
+
+                client = build_client(run_cfg)
+                cache = PromptCache(
+                    ws_path / "prompt_cache.json",
+                    enabled=run_cfg.use_prompt_cache and not run_cfg.force,
+                )
+
+                _task_manager.update(task_id, "running")
+                _task_manager.add_progress(task_id, {"stage": "stage3", "status": "running"})
+
+                prompts = stage3_generate_prompts(
+                    client, run_cfg, product, campaign,
+                    category=p_category, style=p_style,
+                    additional_requirements=p_extra,
+                    platform=p_platform, language=p_language,
+                    generation_mode=run_cfg.generation_mode,
+                    model_attrs=p_model_attrs,
+                    model_scene=p_model_scene,
+                    shooting_style=p_shooting_style,
+                    face_visible=p_face,
+                    cache=cache,
+                )
+
+                _task_manager.add_progress(task_id, {"stage": "stage3", "status": "done", "count": len(prompts)})
+                save_outputs(ws_path, product, campaign, prompts, p_sku)
+                _task_manager.update(task_id, "done", result={
+                    "workspace": str(ws_path), "prompts": len(prompts),
+                })
+            except Exception as exc:
+                LOG.exception("Prompt gen task %s failed", task_id)
+                _task_manager.update(task_id, "failed", error=str(exc))
+
+        threading.Thread(target=_run_prompts, name=f"prompt-{task_id}", daemon=True).start()
+        return jsonify({"task_id": task_id, "status": "queued"})
 
     @app.post("/api/generate-images")
     def api_generate_images():

@@ -21,7 +21,8 @@ function getFormData() {
     const el = document.getElementById(id);
     if (el) fd.set(id, el.value);
   });
-  fd.set('gen_images', '0'); // Analyze step: no images
+  fd.set('gen_images', '0');
+  fd.set('stop_at_stage', '2'); // 只跑到 Stage2 (营销策略), 用户确认后再生成提示词
   fd.set('force', document.getElementById('forceRegen').checked ? '1' : '0');
   return fd;
 }
@@ -72,10 +73,18 @@ function pollAnalyze() {
       setLeftStatus('ok', msg);
       document.getElementById('btnAnalyze').disabled = false;
       document.getElementById('btnAnalyze').textContent = '🔍 重新分析';
-      state.prompts = data.result;
       state.wsPath = data.result?.workspace || '';
-      renderPrompts(data.result);
-      document.getElementById('btnGenerate').disabled = false;
+      // Stage2 only: 显示营销策略, 等待用户确认
+      if (data.result?.campaign) {
+        renderCampaign(data.result.product, data.result.campaign);
+        document.getElementById('btnGenPrompts').disabled = false;
+      }
+      // Full flow (backward compat): 显示提示词
+      if (data.result?.prompts !== undefined) {
+        state.prompts = data.result;
+        renderPrompts(data.result);
+        document.getElementById('btnGenerate').disabled = false;
+      }
     } else if (data.status === 'failed') {
       setLeftStatus('err', data.error || '分析失败');
       document.getElementById('btnAnalyze').disabled = false;
@@ -95,7 +104,111 @@ function setLeftStatus(type, msg) {
 }
 
 // ═══════════════════════════════════════════════
-// Step 2: Generate Images
+// Campaign display (营销策略确认)
+// ═══════════════════════════════════════════════
+function renderCampaign(product, campaign) {
+  if (!campaign) return;
+  const area = document.getElementById('campaignArea');
+  const items = [
+    ['core_selling_point', '核心卖点'],
+    ['pain_points', '痛点'],
+    ['benefits', '利益点'],
+    ['usage_scenarios', '使用场景'],
+    ['steps', '使用步骤'],
+    ['comparison_points', '对比点'],
+    ['trust_elements', '信任元素'],
+  ];
+  let html = '';
+  if (product?.product_name) {
+    html += `<div style="font-size:13px;font-weight:700;margin-bottom:8px">${escHtml(product.product_name)}</div>`;
+  }
+  items.forEach(([key, label]) => {
+    const val = campaign[key];
+    if (!val || (Array.isArray(val) && !val.length)) return;
+    html += `<div class="campaign-card">`;
+    html += `<div class="campaign-head" onclick="this.parentElement.classList.toggle('open')">${label}</div>`;
+    html += `<div class="campaign-body">`;
+    if (typeof val === 'string') {
+      html += `<p>${escHtml(val)}</p>`;
+    } else if (Array.isArray(val)) {
+      html += '<ul>' + val.map(v => `<li>${escHtml(v)}</li>`).join('') + '</ul>';
+    }
+    html += `</div></div>`;
+  });
+  area.innerHTML = html || '<div class="empty-state">营销策略为空</div>';
+}
+
+// ═══════════════════════════════════════════════
+// Step 2: Generate Prompts (from confirmed campaign)
+// ═══════════════════════════════════════════════
+let promptGenTaskId = null;
+async function doGeneratePrompts() {
+  if (!state.wsPath) { alert('请先分析产品'); return; }
+  const btn = document.getElementById('btnGenPrompts');
+  btn.disabled = true; btn.textContent = '生成中...';
+
+  const fd = new FormData();
+  fd.set('ws', state.wsPath);
+  fd.set('generation_mode', document.getElementById('generation_mode').value);
+  fd.set('force', document.getElementById('forceRegen').checked ? '1' : '0');
+  ['category','style','platform','language','model_region','model_gender',
+   'model_age','model_skin','model_body','model_scene','shooting_style',
+   'face_visible','additional_requirements','sku'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) fd.set(id, el.value);
+  });
+
+  try {
+    const r = await fetch('/api/generate-prompts', {method:'POST',body:fd});
+    const data = await r.json();
+    if (data.error) throw new Error(data.error);
+    promptGenTaskId = data.task_id;
+    pollPromptGen();
+  } catch(e) {
+    btn.disabled = false; btn.textContent = '✓ 确认并生成提示词';
+    document.getElementById('promptList').innerHTML =
+      '<div class="status-msg err">' + e.message + '</div>';
+  }
+}
+
+function pollPromptGen() {
+  const tid = promptGenTaskId;
+  if (!tid) return;
+  fetch('/api/status/' + tid).then(r => r.json()).then(data => {
+    if (!data || data.error) {
+      document.getElementById('promptList').innerHTML =
+        '<div class="status-msg err">' + (data?.error||'failed') + '</div>';
+      resetPromptBtn();
+      return;
+    }
+    if (data.status === 'done') {
+      promptGenTaskId = null;
+      resetPromptBtn();
+      fetch('/api/prompts?ws=' + encodeURIComponent(state.wsPath))
+        .then(r => r.json())
+        .then(prompts => {
+          state.prompts = prompts;
+          renderPromptCards(prompts);
+          document.getElementById('btnGenerate').disabled = false;
+        });
+    } else if (data.status === 'failed') {
+      promptGenTaskId = null;
+      resetPromptBtn();
+      document.getElementById('promptList').innerHTML =
+        '<div class="status-msg err">' + (data.error||'failed') + '</div>';
+    } else {
+      setTimeout(pollPromptGen, 2000);
+    }
+  }).catch(() => setTimeout(pollPromptGen, 3000));
+}
+
+function resetPromptBtn() {
+  const btn = document.getElementById('btnGenPrompts');
+  if (btn) { btn.disabled = false; btn.textContent = '✓ 确认并生成提示词'; }
+}
+
+// ═══════════════════════════════════════════════
+// Step 3: Generate Images
 // ═══════════════════════════════════════════════
 async function doGenerateImages() {
   if (!state.prompts) { alert('请先分析产品'); return; }

@@ -138,15 +138,28 @@
 </div>
 </div>
 
-<!-- ═══ MIDDLE: Prompts ═══ -->
-<div class="col" id="midCol">
-<div class="col-head">📝 提示词 <span style="font-weight:400;font-size:10px;color:#999">(双击编辑)</span></div>
-<div class="col-body" id="promptList">
-  <div class="empty-state"><div class="icon">📭</div>点击左侧「分析产品」<br>生成提示词后将显示在这里</div>
+<!-- ═══ MIDDLE: Strategy + Prompts ═══ -->
+<div class="col" id="midCol" style="display:flex;flex-direction:column">
+<!-- Top: Campaign -->
+<div style="flex:1.2;display:flex;flex-direction:column;overflow:hidden;border-bottom:1px solid #EEE">
+<div class="col-head">📊 营销策略 <span style="font-weight:400;font-size:10px;color:#999">(审核后确认)</span></div>
+<div class="col-body" id="campaignArea" style="overflow-y:auto">
+  <div class="empty-state"><div class="icon">📋</div>点击左侧「分析产品」<br>营销策略将显示在这里</div>
 </div>
-<div class="col-foot">
+<div style="padding:6px 10px;border-top:1px solid #EEE;flex-shrink:0">
+  <button class="btn btn-primary" id="btnGenPrompts" disabled onclick="doGeneratePrompts()">✓ 确认并生成提示词</button>
+</div>
+</div>
+<!-- Bottom: Prompts -->
+<div style="flex:1;display:flex;flex-direction:column;overflow:hidden">
+<div class="col-head">📝 提示词 <span style="font-weight:400;font-size:10px;color:#999">(双击编辑)</span></div>
+<div class="col-body" id="promptList" style="overflow-y:auto">
+  <div class="empty-state"><div class="icon">📭</div>确认营销策略后<br>点击「生成提示词」</div>
+</div>
+<div style="padding:6px 10px;border-top:1px solid #EEE;flex-shrink:0">
   <button class="btn btn-primary" id="btnGenerate" disabled onclick="doGenerateImages()">🖼️ 生成图片</button>
   <button class="btn btn-secondary" style="margin-top:4px" id="btnCollapseAll" onclick="collapseAll()">折叠全部</button>
+</div>
 </div>
 </div>
 

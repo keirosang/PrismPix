@@ -67,3 +67,12 @@ select{appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://w
 .status-msg.ok{background:#E8F5E9;color:#2E7D32}
 .status-msg.err{background:#FFEBEE;color:#C62828}
 .footer{text-align:center;color:#BBB;font-size:10px;padding:4px;flex-shrink:0}
+/* Campaign cards */
+.campaign-card{border:1px solid #EEE;border-radius:5px;margin-bottom:4px;overflow:hidden}
+.campaign-head{padding:5px 8px;font-size:11px;font-weight:600;cursor:pointer;background:#FAFAFA;user-select:none}
+.campaign-head:hover{background:#F0F0F0}
+.campaign-body{display:none;padding:5px 8px;font-size:11px;color:#555;line-height:1.5}
+.campaign-card.open .campaign-body{display:block}
+.campaign-body p{margin:0}
+.campaign-body ul{margin:2px 0;padding-left:16px}
+.campaign-body li{margin:1px 0}
