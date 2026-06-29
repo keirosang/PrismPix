@@ -331,8 +331,6 @@ function stopPoll() {
     btn.textContent = '🖼️ 重新生成';
   }
 }
-  state.analyzeTaskId = null;
-}
 
 function addImageToGrid(code, wsPath, status) {
   const area = document.getElementById('resultArea');
