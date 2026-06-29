@@ -1,0 +1,35 @@
+{
+  "product_name": "吊带连衣裙",
+  "category": "女装/连衣裙",
+  "materials": [],
+  "colors": [
+    {
+      "name": "深棕色",
+      "hex": "#3A2B25"
+    },
+    {
+      "name": "黑色肩带",
+      "hex": "#111111"
+    }
+  ],
+  "structure": [
+    "吊带设计",
+    "长款裙身",
+    "宽松A字廓形",
+    "无袖",
+    "上半身直筒、下摆展开",
+    "肩带细长"
+  ],
+  "visible_features": [
+    "深色纯色面料",
+    "裙身有自然褶皱",
+    "下摆不规则垂坠感",
+    "领口较宽",
+    "肩带为黑色",
+    "局部展示了面料细节与缝线"
+  ],
+  "constraints": [
+    "do not modify product shape",
+    "do not change colors"
+  ]
+}

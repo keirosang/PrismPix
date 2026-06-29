@@ -55,26 +55,34 @@ output/
     lookbook_ref.png     # 三面参考图 (正面+背面+侧面, 仅 lookbook)
 ```
 
-> 完整产物示例见 [`samples/WYLYQ003/`](samples/WYLYQ003/)。
+> 完整产物示例见 [`samples/DDLYQ005/`](samples/DDLYQ005/)。
 
 ### 示例产物一览
 
 | 文件 | 说明 |
 |------|------|
-| [product.json](samples/WYLYQ003/product.json) | Stage1 产品视觉分析结果 |
-| [campaign.json](samples/WYLYQ003/campaign.json) | Stage2 营销策略 |
-| [prompts.json](samples/WYLYQ003/prompts.json) | Stage3 14 条 prompt |
-| [prompts.md](samples/WYLYQ003/prompts.md) | 人类可读版 prompt 清单 |
+| [product.json](samples/DDLYQ005/product.json) | Stage1 产品视觉分析结果 |
+| [campaign.json](samples/DDLYQ005/campaign.json) | Stage2 营销策略 |
+| [prompts.json](samples/DDLYQ005/prompts.json) | Stage3 14 条 prompt |
+| [prompts.md](samples/DDLYQ005/prompts.md) | 人类可读版 prompt 清单 |
 
-**主图 (H1-H5, 1:1 正方形)**
+**产品身份证 (6 面板参考图)**
 
 <table>
 <tr>
-<td align="center"><a href="samples/WYLYQ003/H1.png"><img src="samples/WYLYQ003/H1.png" width="120"></a><br>H1 · 纯净白底定妆</td>
-<td align="center"><a href="samples/WYLYQ003/H2.png"><img src="samples/WYLYQ003/H2.png" width="120"></a><br>H2 · 45°结构细节</td>
-<td align="center"><a href="samples/WYLYQ003/H3.png"><img src="samples/WYLYQ003/H3.png" width="120"></a><br>H3 · 模特场景上身</td>
-<td align="center"><a href="samples/WYLYQ003/H4.png"><img src="samples/WYLYQ003/H4.png" width="120"></a><br>H4 · 卖点特写</td>
-<td align="center"><a href="samples/WYLYQ003/H5.png"><img src="samples/WYLYQ003/H5.png" width="120"></a><br>H5 · 多角度陈列</td>
+<td align="center"><a href="samples/DDLYQ005/product_ref.png"><img src="samples/DDLYQ005/product_ref.png" width="300"></a><br>🆔 产品身份证 — 正/背/侧 + 材质/工艺/特征</td>
+</tr>
+</table>
+
+**主图 (H1-H5, 1:1 正方形, 基于产品身份证生成)**
+
+<table>
+<tr>
+<td align="center"><a href="samples/DDLYQ005/H1.png"><img src="samples/DDLYQ005/H1.png" width="120"></a><br>H1 · 纯净白底定妆</td>
+<td align="center"><a href="samples/DDLYQ005/H2.png"><img src="samples/DDLYQ005/H2.png" width="120"></a><br>H2 · 45°结构细节</td>
+<td align="center"><a href="samples/DDLYQ005/H3.png"><img src="samples/DDLYQ005/H3.png" width="120"></a><br>H3 · 模特场景上身</td>
+<td align="center"><a href="samples/DDLYQ005/H4.png"><img src="samples/DDLYQ005/H4.png" width="120"></a><br>H4 · 卖点特写</td>
+<td align="center"><a href="samples/DDLYQ005/H5.png"><img src="samples/DDLYQ005/H5.png" width="120"></a><br>H5 · 多角度陈列</td>
 </tr>
 </table>
 
@@ -82,17 +90,17 @@ output/
 
 <table>
 <tr>
-<td align="center"><a href="samples/WYLYQ003/D1.png"><img src="samples/WYLYQ003/D1.png" width="100"></a><br>D1 · 首屏承接</td>
-<td align="center"><a href="samples/WYLYQ003/D2.png"><img src="samples/WYLYQ003/D2.png" width="100"></a><br>D2 · 卖点1</td>
-<td align="center"><a href="samples/WYLYQ003/D3.png"><img src="samples/WYLYQ003/D3.png" width="100"></a><br>D3 · 材质微距</td>
-<td align="center"><a href="samples/WYLYQ003/D4.png"><img src="samples/WYLYQ003/D4.png" width="100"></a><br>D4 · 结构拆解</td>
-<td align="center"><a href="samples/WYLYQ003/D5.png"><img src="samples/WYLYQ003/D5.png" width="100"></a><br>D5 · 场景1</td>
+<td align="center"><a href="samples/DDLYQ005/D1.png"><img src="samples/DDLYQ005/D1.png" width="100"></a><br>D1 · 首屏承接</td>
+<td align="center"><a href="samples/DDLYQ005/D2.png"><img src="samples/DDLYQ005/D2.png" width="100"></a><br>D2 · 卖点1</td>
+<td align="center"><a href="samples/DDLYQ005/D3.png"><img src="samples/DDLYQ005/D3.png" width="100"></a><br>D3 · 材质微距</td>
+<td align="center"><a href="samples/DDLYQ005/D4.png"><img src="samples/DDLYQ005/D4.png" width="100"></a><br>D4 · 结构拆解</td>
+<td align="center"><a href="samples/DDLYQ005/D5.png"><img src="samples/DDLYQ005/D5.png" width="100"></a><br>D5 · 场景1</td>
 </tr>
 <tr>
-<td align="center"><a href="samples/WYLYQ003/D6.png"><img src="samples/WYLYQ003/D6.png" width="100"></a><br>D6 · 场景2</td>
-<td align="center"><a href="samples/WYLYQ003/D7.png"><img src="samples/WYLYQ003/D7.png" width="100"></a><br>D7 · 对比</td>
-<td align="center"><a href="samples/WYLYQ003/D8.png"><img src="samples/WYLYQ003/D8.png" width="100"></a><br>D8 · 信任元素</td>
-<td align="center"><a href="samples/WYLYQ003/D9.png"><img src="samples/WYLYQ003/D9.png" width="100"></a><br>D9 · CTA收尾</td>
+<td align="center"><a href="samples/DDLYQ005/D6.png"><img src="samples/DDLYQ005/D6.png" width="100"></a><br>D6 · 场景2</td>
+<td align="center"><a href="samples/DDLYQ005/D7.png"><img src="samples/DDLYQ005/D7.png" width="100"></a><br>D7 · 对比</td>
+<td align="center"><a href="samples/DDLYQ005/D8.png"><img src="samples/DDLYQ005/D8.png" width="100"></a><br>D8 · 信任元素</td>
+<td align="center"><a href="samples/DDLYQ005/D9.png"><img src="samples/DDLYQ005/D9.png" width="100"></a><br>D9 · CTA收尾</td>
 </tr>
 </table>
 
@@ -100,12 +108,12 @@ output/
 
 <table>
 <tr>
-<td align="center"><a href="samples/WYLYQ003/lookbook_ref.png"><img src="samples/WYLYQ003/lookbook_ref.png" width="120"></a><br>📐 三面参考图</td>
-<td align="center"><a href="samples/WYLYQ003/M1.png"><img src="samples/WYLYQ003/M1.png" width="100"></a><br>M1 · 正面全身</td>
-<td align="center"><a href="samples/WYLYQ003/M2.png"><img src="samples/WYLYQ003/M2.png" width="100"></a><br>M2 · 侧身行走</td>
-<td align="center"><a href="samples/WYLYQ003/M3.png"><img src="samples/WYLYQ003/M3.png" width="100"></a><br>M3 · 纯背面</td>
-<td align="center"><a href="samples/WYLYQ003/M4.png"><img src="samples/WYLYQ003/M4.png" width="100"></a><br>M4 · 近景互动</td>
-<td align="center"><a href="samples/WYLYQ003/M5.png"><img src="samples/WYLYQ003/M5.png" width="100"></a><br>M5 · 场景抓拍</td>
+<td align="center"><a href="samples/DDLYQ005/lookbook_ref.png"><img src="samples/DDLYQ005/lookbook_ref.png" width="120"></a><br>📐 三面参考图</td>
+<td align="center"><a href="samples/DDLYQ005/M1.png"><img src="samples/DDLYQ005/M1.png" width="100"></a><br>M1 · 正面全身</td>
+<td align="center"><a href="samples/DDLYQ005/M2.png"><img src="samples/DDLYQ005/M2.png" width="100"></a><br>M2 · 侧身行走</td>
+<td align="center"><a href="samples/DDLYQ005/M3.png"><img src="samples/DDLYQ005/M3.png" width="100"></a><br>M3 · 纯背面</td>
+<td align="center"><a href="samples/DDLYQ005/M4.png"><img src="samples/DDLYQ005/M4.png" width="100"></a><br>M4 · 近景互动</td>
+<td align="center"><a href="samples/DDLYQ005/M5.png"><img src="samples/DDLYQ005/M5.png" width="100"></a><br>M5 · 场景抓拍</td>
 </tr>
 </table>
 

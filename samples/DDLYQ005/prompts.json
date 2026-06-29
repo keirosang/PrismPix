@@ -1,0 +1,464 @@
+{
+  "H1": {
+    "size": "1024x1024",
+    "objective": "Pure white hero main image to maximize click-through by presenting the dress front-facing, clean, premium, and instantly readable.",
+    "style": "ecommerce commercial photography",
+    "prompt": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Clean studio hero product presentation on pure #FFFFFF seamless background, front 3/4 angle, full shot, product occupies 38% of the frame, with 62% whitespace and a clearly empty top center 200×100px area kept empty for platform price overlay. Keep the dress centered slightly below midpoint, crisp silhouette, premium fashion advertising look, subtle natural floor shadow only, no props, no model, no clutter, no decorative elements, emphasize elegant drape and refined tailoring through lighting and composition only.",
+    "camera": "front 3/4, eye-level, 85mm look, centered product presentation",
+    "lighting": "Soft diffused studio lighting at 5500K, even key light with gentle fill, minimal controlled shadow, clean commercial white-background illumination",
+    "composition": "Product占比38%，留白62%；必须显式保留主留白；top center 200×100px area kept empty for platform price overlay; centered premium hero composition with generous negative space",
+    "background": "Pure seamless studio background #FFFFFF with a very subtle grounded shadow area only, no gradient, no texture",
+    "color_control": [
+      "#FFFFFF",
+      "#1A1A1A",
+      "#8B6F47",
+      "#F5F0EB"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "35-40%",
+    "whitespace_pct": "45%",
+    "angle": "front 3/4",
+    "shot_size": "full shot",
+    "is_infographic": false
+  },
+  "H2": {
+    "size": "1024x1024",
+    "objective": "Side-angle main image to reveal garment structure, depth, and material behavior while staying clean and premium.",
+    "style": "ecommerce commercial photography",
+    "prompt": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Clean studio side profile product presentation on seamless #FFFFFF background, side 90° profile, medium shot, product occupies 28% of the frame, with 72% whitespace. Show the garment’s profile line, strap alignment, width of the bodice, and the A-line fall with a calm premium fashion catalog feel. Keep edges sharp, drape believable, no props, no model, no extra styling objects, pure commercial clarity.",
+    "camera": "side 90° profile, eye-level, 70-85mm product lens feel",
+    "lighting": "Soft even studio lighting at 5500K, slightly directional key light to reveal contours and fabric fall, controlled shadow softness",
+    "composition": "Product占比28%，留白72%；clean centered profile layout with ample negative space and no overlap clutter",
+    "background": "Seamless #FFFFFF studio background with faint grounded shadow only, no texture, no gradient",
+    "color_control": [
+      "#FFFFFF",
+      "#1A1A1A",
+      "#8B6F47",
+      "#F5F0EB"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "25-30%",
+    "whitespace_pct": "45%",
+    "angle": "side 90° profile",
+    "shot_size": "medium shot",
+    "is_infographic": false
+  },
+  "H3": {
+    "size": "1024x1024",
+    "objective": "Hero lifestyle main image with model to show real wearing effect, body proportion, and street-snap credibility.",
+    "style": "ecommerce commercial photography",
+    "prompt": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Street snap fashion scene with a Jiangnan Chinese young woman, 18-25, fair porcelain skin, hourglass body type, nine-head proportion, full face visible, natural asymmetry, visible pores and fine skin texture, NOT retouched, NOT AI-generated look, shot on Canon EOS R5 85mm f/1.2. Low angle looking up heroic full-body framing, she is wearing the dress in a candid street-walk moment, natural relaxed pose that lengthens the legs, subtle movement in the skirt, urban background softly blurred and minimal, no props foreground. Keep the outfit readable and authentic, with realistic scale and a premium street-style editorial mood.",
+    "camera": "low angle looking up, Canon EOS R5 85mm f/1.2, full body street snap, full face visible",
+    "lighting": "Natural overcast daylight balanced to 5500K with soft fill, gentle directional street light feel, realistic skin texture preserved",
+    "composition": "Product占比22%，留白50%；full shot with elongated leg line, subject placed slightly off-center, breathable negative space, no crowding",
+    "background": "Minimal street environment with clean architectural tones constrained by #FFFFFF and #F5F0EB accents, background kept airy and uncluttered",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "20-25%",
+    "whitespace_pct": "50%",
+    "angle": "low angle looking up (heroic)",
+    "shot_size": "full shot",
+    "is_infographic": false
+  },
+  "H4": {
+    "size": "1024x1024",
+    "objective": "Macro hero detail to visualize fabric quality, drape, stitching, and premium workmanship.",
+    "style": "ecommerce commercial photography",
+    "prompt": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Overhead 90° top-down macro close-up on a seamless studio surface, product occupies 58% of the frame with 42% whitespace. Focus on natural folds, seam precision, strap attachment, and the way the fabric gathers and falls, with a refined editorial macro look. Use a clean, tactile composition that isolates the craftsmanship without adding props or decorative elements.",
+    "camera": "overhead 90° top-down, macro close-up, 100mm macro lens feel",
+    "lighting": "Soft diffused macro lighting at 5500K, high-CRI studio light, controlled highlights to reveal weave and stitching detail",
+    "composition": "Product占比58%，留白42%；macro close-up layout with clear focal zone and uncluttered perimeter",
+    "background": "Seamless #FFFFFF studio tabletop background, neutral and texture-free, no gradient",
+    "color_control": [
+      "#FFFFFF",
+      "#1A1A1A",
+      "#8B6F47",
+      "#F5F0EB"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "55-60%",
+    "whitespace_pct": "40%",
+    "angle": "overhead 90° top-down",
+    "shot_size": "macro close-up",
+    "is_infographic": false
+  },
+  "H5": {
+    "size": "1024x1024",
+    "objective": "Multi-angle SKU presentation to increase completeness perception and showcase product versatility from multiple views.",
+    "style": "ecommerce commercial photography",
+    "prompt": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Rear 45° angled full shot of a multi-view SKU presentation, product set occupies 66% of the frame with 34% whitespace. Arrange several coordinated views in one elegant commercial composition: main rear 45° view centered, with smaller supporting angle variations aligned cleanly nearby to imply rich SKU coverage without visual clutter. Keep every view consistent in scale, lighting, and material rendering, with a premium catalog-grid feel on pure studio background.",
+    "camera": "rear 45° angled, full shot, catalog grid presentation, 85mm look",
+    "lighting": "Uniform soft studio lighting at 5500K with consistent shadow direction across all views, premium e-commerce clarity",
+    "composition": "整体占比66%，留白34%；multi-view layout with one hero view and supporting views, evenly spaced, uncluttered",
+    "background": "Seamless #FFFFFF studio background with optional secondary area #F5F0EB in supporting tiles only, no gradient, no texture",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "60-70% (整体)",
+    "whitespace_pct": "35%",
+    "angle": "rear 45° angled",
+    "shot_size": "full shot",
+    "is_infographic": false
+  },
+  "D1": {
+    "size": "1024x1536",
+    "objective": "Detail page first screen to establish brand tone, headline, features, and immediate product understanding.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic hero cover. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Front 3/4 full-shot premium cover layout on #FFFFFF background, product occupies 28% of the frame with 48% whitespace. Add a large Didot serif headline in simplified Chinese, 「显瘦有型」, plus a smaller subtitle line 「宽松A字长款」. Place four thin-line feature icons with short labels in a neat row: 「遮肉」, 「显高」, 「轻盈」, 「百搭」. Maintain a magazine-like editorial hierarchy with the product anchored cleanly to one side and text blocks aligned in a grid.",
+    "camera": "front 3/4, full shot, 85mm editorial product framing",
+    "lighting": "Soft neutral-cool studio lighting at 5500K, gentle fill and clean shadow separation for text readability",
+    "composition": "Product占比28%，留白48%；cover-style info hierarchy with headline, subtitle, 4 feature icons, and balanced text/image spacing",
+    "background": "Primary background #FFFFFF with secondary accent blocks in #F5F0EB and minimal accent lines in #8B6F47, no gradient",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "25-30%",
+    "whitespace_pct": "48%",
+    "angle": "front 3/4",
+    "shot_size": "full shot",
+    "is_infographic": true
+  },
+  "D2": {
+    "size": "1024x1536",
+    "objective": "Explain the top benefit with a two-column layout that pairs product visibility and concise persuasive copy.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic benefit layout. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Elevated overhead 45° medium-shot infographic on #F5F0EB background with a left-right split layout: product on the left occupying 26% of the frame, benefit list on the right, with 48% whitespace preserved. Use a Didot serif headline 「轻松显瘦」 and a short subtitle 「A字廓形更包容」. Add 3-4 thin-line icons with concise labels and benefit points: 「遮肉更自在」, 「拉长比例」, 「通勤可穿」, 「出门省搭配」. Keep the layout airy, editorial, and easy to scan.",
+    "camera": "elevated overhead 45°, medium shot, clean infographic framing",
+    "lighting": "Even soft studio lighting at 5500K with subtle side fill to separate columns and keep text crisp",
+    "composition": "Product占比28%，留白48%；two-column layout with product left and benefit text right, icon-label list aligned vertically",
+    "background": "#F5F0EB seamless background with restrained #FFFFFF content blocks and #8B6F47 accent rules, no gradient",
+    "color_control": [
+      "#F5F0EB",
+      "#FFFFFF",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "25-30%",
+    "whitespace_pct": "48%",
+    "angle": "elevated overhead 45°",
+    "shot_size": "medium shot",
+    "is_infographic": true
+  },
+  "D3": {
+    "size": "1024x1536",
+    "objective": "Highlight fabric craftsmanship and premium texture through a macro detail callout with trust markers.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic macro detail. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Macro close-up on #FFFFFF background with the product filling 58% of the frame and 40% whitespace. Build a premium detail study with one large close-up, two circular annotation callouts, and a trust badge cluster. Use a Didot headline 「细节看得见」 and small labels such as 「缝线整齐」, 「褶皱自然」, 「垂坠感强」, plus a rounded trust badge 「工艺可见」. Focus on fabric texture, seam precision, and drape behavior with crisp editorial clarity.",
+    "camera": "macro close-up, overhead-leaning detail framing, 100mm macro lens feel",
+    "lighting": "Soft diffused macro lighting at 5500K, high-contrast micro-detail reveal with controlled highlight roll-off",
+    "composition": "Product占比58%，留白40%；macro hero detail with annotation circles, trust badge cluster, and clean hierarchy",
+    "background": "Seamless #FFFFFF background with minimal #F5F0EB annotation panels and #8B6F47 callout lines, no gradient",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "55-60%",
+    "whitespace_pct": "40%",
+    "angle": "macro close-up",
+    "shot_size": "macro close-up",
+    "is_infographic": true
+  },
+  "D4": {
+    "size": "1024x1536",
+    "objective": "Explain structure and silhouette through a clean side-view technical infographic.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic structure diagram. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Side 90° profile medium-shot technical layout on #F5F0EB background, product occupies 48% of the frame with 45% whitespace. Present an exploded-structure style visual explanation using subtle split layers and precise labels that point to the strap, bodice line, and A-line expansion. Add simple rounded labels: 「细肩带」, 「直筒上身」, 「A字下摆」, 「版型清楚」. Keep it elegant, minimal, and instructional rather than decorative.",
+    "camera": "side 90° profile, medium shot, technical infographic framing",
+    "lighting": "Neutral-cool studio lighting at 5500K with soft edge definition to separate structure layers",
+    "composition": "Product占比48%，留白45%；exploded-structure style with labeled callouts and tidy spacing",
+    "background": "#F5F0EB seamless background with #FFFFFF structure panels and thin #8B6F47 connector lines, no gradient",
+    "color_control": [
+      "#F5F0EB",
+      "#FFFFFF",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "45-50%",
+    "whitespace_pct": "45%",
+    "angle": "side 90° profile",
+    "shot_size": "medium shot",
+    "is_infographic": true
+  },
+  "D5": {
+    "size": "1024x1536",
+    "objective": "Show one real-use lifestyle scenario to help buyers imagine daily wear.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic lifestyle scene. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. High 45° looking down full-shot street scene on #FFFFFF and #F5F0EB toned minimal urban background, product occupies 22% of the frame with 50% whitespace. Add a three-line scenario card layout with a headline 「日常也好看」 and scene tags 「通勤」, 「约会」, 「旅行」. Include a small label ribbon showing the benefit 「轻松出门」. The model should appear as a stylish Jiangnan Chinese young woman in a calm street-snap moment, full face visible, nine-head proportion, natural skin texture, NOT retouched, NOT AI-generated look.",
+    "camera": "high 45° looking down, full shot, street snap lifestyle framing, Canon EOS R5 85mm f/1.2 feel",
+    "lighting": "Soft natural daylight at 5500K with gentle fill, realistic street-snap shadow softness, skin texture preserved",
+    "composition": "Product占比22%，留白50%；scene card layout with headline, three scene tags, and a short benefit ribbon",
+    "background": "Minimal street setting kept clean with #FFFFFF and #F5F0EB dominant surfaces, no gradient, no clutter",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "20-25%",
+    "whitespace_pct": "50%",
+    "angle": "high 45° looking down",
+    "shot_size": "full shot",
+    "is_infographic": true
+  },
+  "D6": {
+    "size": "1024x1536",
+    "objective": "Show a second lifestyle scenario to broaden usage imagination and strengthen emotional appeal.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic lifestyle scene. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Low angle looking up full-shot street scene with heroic but natural energy, product occupies 22% of the frame with 50% whitespace. Use a clean scenario card layout with headline 「轻松驾驭」 and supporting tags 「夏日单穿」, 「外搭内搭」, 「氛围感」. Keep the model as a real Jiangnan Chinese young woman, full face visible, fair skin with visible pores and natural asymmetry, captured in a candid street-snap pose with subtle movement and no artificial polish.",
+    "camera": "low angle looking up, full shot, street snap lifestyle framing, Canon EOS R5 85mm f/1.2 feel",
+    "lighting": "Natural daylight balanced to 5500K with soft fill, realistic contrast and gentle shadow edges",
+    "composition": "Product占比22%，留白50%；scene card layout with headline and three supportive scenario tags",
+    "background": "Minimal street environment with dominant #FFFFFF and #F5F0EB architectural surfaces, no gradient, no busy props",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "20-25%",
+    "whitespace_pct": "50%",
+    "angle": "low angle looking up",
+    "shot_size": "full shot",
+    "is_infographic": true
+  },
+  "D7": {
+    "size": "1024x1536",
+    "objective": "Visually compare the before problem and after solution to convert hesitation into purchase confidence.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic before-after comparison. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Vertical split comparison layout on #FFFFFF background with subtle #F5F0EB divider band, product occupies 33% of the frame with 48% whitespace. Top half or left side shows a front 3/4 problem-oriented presentation with a label 「担心显胖」, bottom half or right side shows a side profile solution view with a label 「A字更包容」. Add a clear arrow flow and a short benefit line 「一穿就懂」. Keep the layout concise, balanced, and easy to compare at a glance.",
+    "camera": "front 3/4 before and side profile after, medium shot, comparison infographic framing",
+    "lighting": "Soft neutral-cool studio lighting at 5500K with matched exposure across both comparison states",
+    "composition": "Product占比33%，留白48%；split-screen before/after layout with arrow flow, concise label blocks, and clear contrast",
+    "background": "Primary #FFFFFF with comparison divider and secondary panels in #F5F0EB, no gradient",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "30-35%",
+    "whitespace_pct": "48%",
+    "angle": "front 3/4 (before) and side profile (after)",
+    "shot_size": "medium shot",
+    "is_infographic": true
+  },
+  "D8": {
+    "size": "1024x1536",
+    "objective": "Build trust by showing packaging, workmanship, inspection, and close technical proof points.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic trust proof. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Macro close-up on details with product occupying 42% of the frame and 45% whitespace on a #F5F0EB background. Present packaging, stitching, and quality-check style close views with one trust badge, one inspection stamp, and one detail label stack. Use a headline 「做工看得见」 and compact trust labels 「包装整洁」, 「缝线稳」, 「细节清楚」, plus a rounded badge 「质检安心」. Keep the composition precise, premium, and confidence-building, with no decorative clutter.",
+    "camera": "macro close-up on details, 100mm macro feel, close inspection framing",
+    "lighting": "High-clarity soft studio lighting at 5500K, controlled highlight detail for stitching and packaging surfaces",
+    "composition": "Product占比42%，留白45%；macro trust layout with badge, stamp, and stacked detail labels",
+    "background": "Seamless #F5F0EB background with white packaging area and #8B6F47 inspection accents, no gradient",
+    "color_control": [
+      "#F5F0EB",
+      "#FFFFFF",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "40-45%",
+    "whitespace_pct": "45%",
+    "angle": "macro close-up on details",
+    "shot_size": "macro close-up",
+    "is_infographic": true
+  },
+  "D9": {
+    "size": "1024x1536",
+    "objective": "Close the sale with a clear call-to-action layout that combines headline, product, badges, and purchase prompt.",
+    "style": "ecommerce commercial photography",
+    "prompt": "E-commerce infographic CTA closure. Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes. Front 3/4 full-shot CTA layout on a clean #FFFFFF background, product occupies 33% of the frame with 48% whitespace. Place a strong Didot serif headline 「现在入手」 and a concise CTA button 「立即购买」. Add three small badge labels with thin-line icons: 「显瘦」, 「百搭」, 「高级感」. Keep the product centered with balanced text blocks, a clear conversion path, and a premium closing-screen feel that remains airy and uncluttered.",
+    "camera": "front 3/4, full shot, conversion-focused editorial framing",
+    "lighting": "Soft neutral-cool studio lighting at 5500K, evenly lit for clear CTA readability and premium finish",
+    "composition": "Product占比33%，留白48%；CTA closure layout with headline, button, and three badge icons",
+    "background": "Seamless #FFFFFF background with subtle #F5F0EB accent panels and #8B6F47 CTA button accents, no gradient",
+    "color_control": [
+      "#FFFFFF",
+      "#F5F0EB",
+      "#1A1A1A",
+      "#8B6F47"
+    ],
+    "product_lock_rules": [
+      "preserve original product exactly, do not modify shape/color/material, do not add/remove parts"
+    ],
+    "style_lock": "Campaign Style Lock: consistent premium 女装/连衣裙 ecommerce visual system across entire set; fixed palette: bg #FFFFFF, text #1A1A1A, accent #8B6F47, secondary #F5F0EB; tone: neutral-cool, 5500K; fonts: headlines: Didot serif; body/labels: SF Pro Display sans-serif; no third font family; backgrounds: primary: #FFFFFF clean studio; alternate 1: #F5F0EB; alternate 2: #FFFFFF; strict rotation across images; lighting: neutral-cool, 5500K studio lighting; consistent shadow softness and direction across all images; layout: generous whitespace (45-50%+); rounded rectangular info labels (8px corner radius); clean grid-based layouts; consistent margin/padding across all screens; icons: thin-line icons, 2px stroke weight, consistent style; color: #8B6F47; no filled icons, no mixed icon styles; product: stable product scale and placement; product material and finish consistently rendered; product angle varies per screen per multi-angle rules; STRICTLY NO: no color palette changes; no mixed font families; no random backgrounds; no inconsistent lighting direction or color temperature; no mismatched icon styles; no decoration style drift; no product proportion changes.",
+    "language": "中文",
+    "model_attrs": "Jiangnan, Female, 18-25, Fair skin, Hourglass build",
+    "negative_constraints": [
+      "no extra props, hands, or decorative objects",
+      "no watermarks, fake logos, or extra text",
+      "no gradient backgrounds unless specified",
+      "no sci-fi or fantasy elements"
+    ],
+    "product_ratio": "30-35%",
+    "whitespace_pct": "48%",
+    "angle": "front 3/4",
+    "shot_size": "full shot",
+    "is_infographic": true
+  }
+}
