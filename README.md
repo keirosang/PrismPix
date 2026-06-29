@@ -4,38 +4,39 @@
 
 采用 **images.edit API** 以原始产品图为底图，保留产品外观不变，仅合成场景/环境/背景/模特。集成 **25 个场景模板**、**Campaign Style Lock** 视觉约束和 **GPT-Image-2 生产铁律**（HEX 色值、产品占比、显式留白、否定清单、平台预留空间、多角度规则、信息图格式）。
 
-## 架构
+## 处理流程
 
-```
-用户输入 (图片 + 类目 + 风格 + API Key)
-          │
-          ▼
-  ┌──────────────────────────────┐
-  │  Stage 1: 产品视觉分析         │  vision model 读图
-  │  → product.json              │  提取材质/颜色/结构/约束
-  └──────────────┬───────────────┘
-                 │
-                 ▼
-  ┌──────────────────────────────┐
-  │  Stage 2: 营销策略生成         │  text model
-  │  → campaign.json             │  卖点/痛点/场景/信任元素
-  └──────────────┬───────────────┘
-                 │
-                 ▼
-  ┌──────────────────────────────────────────────┐
-  │  Stage 3: Prompt 生成 (14条 H1-H5 + D1-D9)   │
-  │                                              │
-  │  输入: product + campaign + category + style │
-  │  注入: 25场景模板 + Campaign Style Lock       │
-  │        + GPT-Image-2 铁律                   │
-  │  → prompts.json + prompts.md                │
-  └──────────────┬───────────────────────────────┘
-                 │
-                 ▼
-  ┌──────────────────────────────┐
-  │  图片生成 (images.edit API)   │  ThreadPoolExecutor 并发
-  │  → H1.png ... D9.png        │  断点续跑, 跳过已有图
-  └──────────────────────────────┘
+```mermaid
+flowchart TD
+    U[用户上传产品图 + 填写选项] --> A
+
+    subgraph Step1["① 分析产品"]
+        A[点击「🔍 分析产品」] --> S1[Stage1 视觉分析]
+        S1 --> S2[Stage2 营销策略]
+        S2 --> C[📊 营销策略卡片<br/>用户审核/展开/折叠]
+    end
+
+    C -->|确认| B
+
+    subgraph Step2["② 生成提示词"]
+        B[点击「✓ 确认并生成提示词」] --> S3[Stage3 Prompt 生成]
+        S3 --> P[📝 14 条提示词<br/>双击可编辑/折叠/展开]
+    end
+
+    P -->|确认| G
+
+    subgraph Step3["③ 生成图片"]
+        G[点击「🖼️ 生成图片」] --> REF[产品身份证参考图<br/>正/背/侧 + 3 细节特写]
+        REF --> IMG[images.edit 并发生成<br/>以参考图为底图]
+        IMG --> OUT[🖼️ 图片网格<br/>点击放大/下载]
+    end
+
+    style A fill:#1a1a1a,color:#fff
+    style B fill:#1a1a1a,color:#fff
+    style G fill:#1a1a1a,color:#fff
+    style C fill:#f5f0eb,color:#333
+    style P fill:#f5f0eb,color:#333
+    style OUT fill:#e8f5e9,color:#2e7d32
 ```
 
 ## 输出目录
