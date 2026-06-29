@@ -96,8 +96,11 @@ def run_sku(
     from ecom_image_gen.prompt_templates import get_modules_for_mode
     expected_codes = {m.code for m in get_modules_for_mode(cfg.generation_mode)}
 
-    # 如果只要求跑到 Stage2, 提前返回
+    # 如果只要求跑到 Stage2, 写盘后提前返回
     if cfg.generation_mode == "__stage2__":
+        from ecom_image_gen.json_utils import write_json
+        write_json(ws / "product.json", product)
+        write_json(ws / "campaign.json", campaign)
         result = {
             "sku": sku,
             "workspace": str(ws),
